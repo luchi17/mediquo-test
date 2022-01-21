@@ -8,29 +8,32 @@
 import UIKit
 
 class CharacterListViewController: UIViewController {
-
+    
     @IBOutlet private weak var contentView: UIView!
     @IBOutlet private weak var collectionView: UICollectionView!
     @IBOutlet private weak var updateListButton: UIButton!
+    @IBOutlet private weak var segmentedControl: UISegmentedControl!
     
     private var viewModel: CharacterListInterfaceToViewModelProtocol = CharacterListViewModel(characterListManager: CharacterListManager(dataSource: CharacterListDataSource()))
     
     private var characterListModel: CharacterListModel = CharacterListModel()
     
+    private var currentItemsToShow: [CharacterItemModel] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureUI()
-    
+        
         viewModel.loadCharacterList()
         
         viewModel.bindCharacterListModel = { list in
             
             guard let list = list else { return }
             
-            let uniqueItems = Array(Set(list.items))
-            let uniqueItemsSorted = uniqueItems.sorted {$0.name < $1.name}
-            self.characterListModel.items = uniqueItemsSorted
+            self.characterListModel = list
+            
+            self.updateItemsToShow()
             
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
@@ -39,11 +42,27 @@ class CharacterListViewController: UIViewController {
     }
     
     func configureUI() {
- 
-        self.contentView.backgroundColor = .clear
+        
+        self.contentView.backgroundColor = UIColor.systemTeal.withAlphaComponent(0.4)
         
         updateListButton.setTitle("Update", for: .normal)
         updateListButton.setTitleColor(.purple, for: .normal)
+        
+        segmentedControl.tintColor = UIColor.systemTeal
+        segmentedControl.addTarget(self, action: #selector(segmentedControlValueChanged), for: .valueChanged)
+        segmentedControl.selectedSegmentTintColor = UIColor.systemTeal
+        segmentedControl.backgroundColor = UIColor.gray
+        segmentedControl.setTitle("Breaking Bad", forSegmentAt: 0)
+        segmentedControl.setTitle("Better Call Saul", forSegmentAt: 1)
+        
+        if let font = UIFont(name: "GillSans-Bold", size: 16) {
+            segmentedControl.setTitleTextAttributes([.foregroundColor : UIColor.white,
+                                                     .font : font],
+                                                    for: .selected)
+            segmentedControl.setTitleTextAttributes([.foregroundColor : UIColor.white,
+                                                     .font : font],
+                                                    for: .normal)
+        }
         
         let itemWidth: CGFloat = view.frame.width * 0.40
         let collectionViewLayout = UICollectionViewFlowLayout()
@@ -57,18 +76,35 @@ class CharacterListViewController: UIViewController {
         collectionView.collectionViewLayout = collectionViewLayout
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.backgroundColor = UIColor.systemTeal.withAlphaComponent(0.4)
+        collectionView.backgroundColor = .clear
         
         let characterCollectionViewCellIdentifier = String(describing: CharacterCollectionViewCell.self)
         let characterCollectionViewCellNib = UINib(nibName: characterCollectionViewCellIdentifier, bundle: nil)
         collectionView.register(characterCollectionViewCellNib, forCellWithReuseIdentifier: characterCollectionViewCellIdentifier)
     }
     
-    @IBAction func updateListButtonTouchUpInside(_ sender: UIButton) {
-       
+    @objc func segmentedControlValueChanged() {
+        self.updateItemsToShow()
     }
     
-
+    private func updateItemsToShow() {
+        
+        DispatchQueue.main.async {
+            if self.segmentedControl.selectedSegmentIndex == 0 {
+                self.currentItemsToShow = self.characterListModel.breakingBadCharacters ?? []
+                
+            } else {
+                self.currentItemsToShow = self.characterListModel.betterCallSaulCharacters ?? []
+            }
+            self.collectionView.reloadData()
+        }
+    }
+    
+    @IBAction func updateListButtonTouchUpInside(_ sender: UIButton) {
+        
+    }
+    
+    
 }
 
 extension CharacterListViewController: UICollectionViewDelegate {
@@ -82,7 +118,7 @@ extension CharacterListViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let characterItem = self.characterListModel.items[indexPath.row]
+        let characterItem = self.currentItemsToShow[indexPath.row]
         
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: CharacterCollectionViewCell.self), for: indexPath) as? CharacterCollectionViewCell {
             
@@ -95,6 +131,6 @@ extension CharacterListViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.characterListModel.items.count
+        return self.currentItemsToShow.count
     }
 }

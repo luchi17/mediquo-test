@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="collectionView" destination="eux-Y5-6Fa" id="FJs-LQ-jyq"/>
                 <outlet property="contentView" destination="U4l-vL-Ujf" id="tq4-Br-J9x"/>
+                <outlet property="segmentedControl" destination="MQt-Uk-AJU" id="NJn-oZ-Ajj"/>
                 <outlet property="updateListButton" destination="7wm-gW-xAa" id="bNC-pi-uLA"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -25,7 +26,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <subviews>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="eux-Y5-6Fa">
-                            <rect key="frame" x="0.0" y="144" width="414" height="752"/>
+                            <rect key="frame" x="0.0" y="155" width="414" height="741"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qng-iT-RUX">
                                 <size key="itemSize" width="128" height="128"/>
@@ -35,7 +36,7 @@
                             </collectionViewFlowLayout>
                         </collectionView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7wm-gW-xAa">
-                            <rect key="frame" x="347" y="100" width="67" height="24"/>
+                            <rect key="frame" x="347" y="50" width="67" height="24"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="24" id="xMb-Zp-7oy"/>
                             </constraints>
@@ -45,14 +46,29 @@
                                 <action selector="updateListButtonTouchUpInside:" destination="-1" eventType="touchUpInside" id="FxF-Ju-sP0"/>
                             </connections>
                         </button>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="MQt-Uk-AJU">
+                            <rect key="frame" x="57" y="84" width="300" height="32"/>
+                            <constraints>
+                                <constraint firstAttribute="width" priority="900" constant="300" id="jpg-2a-NC1"/>
+                            </constraints>
+                            <segments>
+                                <segment title="First"/>
+                                <segment title="Second"/>
+                            </segments>
+                            <color key="selectedSegmentTintColor" systemColor="systemTealColor"/>
+                        </segmentedControl>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="MQt-Uk-AJU" secondAttribute="trailing" constant="16" id="CmI-MT-f1m"/>
                         <constraint firstItem="7wm-gW-xAa" firstAttribute="trailing" secondItem="eux-Y5-6Fa" secondAttribute="trailing" id="DZZ-vQ-coc"/>
+                        <constraint firstItem="7wm-gW-xAa" firstAttribute="bottom" secondItem="MQt-Uk-AJU" secondAttribute="top" constant="-10" id="DdY-sw-6Qt"/>
+                        <constraint firstItem="MQt-Uk-AJU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="U4l-vL-Ujf" secondAttribute="leading" constant="16" id="HDa-Ce-wif"/>
+                        <constraint firstItem="MQt-Uk-AJU" firstAttribute="centerX" secondItem="U4l-vL-Ujf" secondAttribute="centerX" id="TAM-Mx-mRI"/>
                         <constraint firstAttribute="trailing" secondItem="eux-Y5-6Fa" secondAttribute="trailing" id="U4G-lS-bm9"/>
                         <constraint firstItem="eux-Y5-6Fa" firstAttribute="leading" secondItem="U4l-vL-Ujf" secondAttribute="leading" id="UMu-Tt-7de"/>
-                        <constraint firstItem="7wm-gW-xAa" firstAttribute="top" secondItem="U4l-vL-Ujf" secondAttribute="top" constant="100" id="f6T-AS-e2G"/>
-                        <constraint firstItem="eux-Y5-6Fa" firstAttribute="top" secondItem="7wm-gW-xAa" secondAttribute="bottom" constant="20" id="p7B-C9-g3a"/>
+                        <constraint firstItem="7wm-gW-xAa" firstAttribute="top" secondItem="U4l-vL-Ujf" secondAttribute="top" constant="50" id="f6T-AS-e2G"/>
+                        <constraint firstItem="eux-Y5-6Fa" firstAttribute="top" secondItem="MQt-Uk-AJU" secondAttribute="bottom" constant="40" id="mhz-UG-hMp"/>
                         <constraint firstAttribute="bottom" secondItem="eux-Y5-6Fa" secondAttribute="bottom" id="zbj-Qo-X53"/>
                     </constraints>
                 </view>
@@ -71,6 +87,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
