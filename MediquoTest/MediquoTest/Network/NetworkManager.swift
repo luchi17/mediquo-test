@@ -9,7 +9,7 @@ import Foundation
 
 class NetworkManager {
     
-    private let baseURLString = "https://www.breakingbadapi.com/api"
+    private let baseURLString = "https://www.breakingbadapi.com"
     
     init() { }
     
@@ -36,6 +36,33 @@ class NetworkManager {
     }
     
     private func setupRequestUrlString(endpointKey: String, queryParams : [String: String]? = nil) -> String {
-        return baseURLString + endpointKey
+
+        var urlComponents = URLComponents(string: baseURLString + endpointKey)
+        urlComponents?.queryItems = self.setUpQueryItems(queryParams: queryParams)
+        print("URL")
+        print(urlComponents?.url?.absoluteString)
+        
+        guard let url = urlComponents?.url?.absoluteString else {
+            print("Malformed URL")
+            return ""
+        }
+        
+        return url
     }
+
+    
+    private func setUpQueryItems(queryParams: [String: String]?) -> [URLQueryItem] {
+        
+        guard let queryParams = queryParams else {
+            return []
+        }
+
+        var queryItems: [URLQueryItem] = []
+        for (key, value) in queryParams {
+            queryItems.append(URLQueryItem(name: key, value: value.replacingOccurrences(of: " ", with: "+")))
+        }
+        
+        return queryItems
+    }
+
 }
