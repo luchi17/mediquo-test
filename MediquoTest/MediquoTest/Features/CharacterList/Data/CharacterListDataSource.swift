@@ -11,19 +11,43 @@ class CharacterListDataSource : NSObject, CharacterListDataSourceProtocol {
     
     var networkManager: NetworkManager = NetworkManager()
     
-    func getCharacterListData(onSuccess: @escaping ([CharacterItemDataOut]?) -> (), onError: @escaping (Error?) -> ()) {
+    func getCharactersListData(onSuccess: @escaping ([CharacterItemDataOut]?) -> (), onError: @escaping (Error?) -> ()) {
         
         networkManager.doJSONRequest(endpointKey: EndpointRepositoryKeys.charactersList.rawValue,
                                      onSuccess: onSuccess,
                                      onError: onError)
     }
     
-    func getCharacterByNameData(name: String, onSuccess: @escaping ([CharacterItemDataOut]?) -> (), onError: @escaping (Error?) -> ()) {
+    func getCharactersListBySeries(name: String, onSuccess: @escaping ([CharacterItemDataOut]?) -> (), onError: @escaping (Error?) -> ()) {
+        
+        let queryParams = ["category": name]
+        networkManager.doJSONRequest(endpointKey: EndpointRepositoryKeys.charactersList.rawValue,
+                                     queryParams: queryParams,
+                                     onSuccess: onSuccess,
+                                     onError: onError)
+    }
+    
+    func getCharacterQuotes(name: String, onSuccess: @escaping ([CharacterItemDataOut]?) -> (), onError: @escaping (Error?) -> ()) {
+        
+        let queryParams = ["author": name]
+        networkManager.doJSONRequest(endpointKey: EndpointRepositoryKeys.charactersList.rawValue,
+                                     queryParams: queryParams,
+                                     onSuccess: onSuccess,
+                                     onError: onError)
+    }
+
+    func getCharacterByName(name: String, onSuccess: @escaping ([CharacterItemDataOut]?) -> (), onError: @escaping (Error?) -> ()) {
         
     }
+    
+    
 }
 
 protocol CharacterListDataSourceProtocol {
-    func getCharacterListData(onSuccess: @escaping ([CharacterItemDataOut]?) -> (), onError: @escaping (Error?) -> ())
-    func getCharacterByNameData(name: String, onSuccess: @escaping ([CharacterItemDataOut]?) -> (), onError: @escaping (Error?) -> ())
+    
+    func getCharactersListData(onSuccess: @escaping ([CharacterItemDataOut]?) -> (), onError: @escaping (Error?) -> ())
+    func getCharacterByName(name: String, onSuccess: @escaping ([CharacterItemDataOut]?) -> (), onError: @escaping (Error?) -> ())
+    func getCharacterQuotes(name: String, onSuccess: @escaping ([CharacterItemDataOut]?) -> (), onError: @escaping (Error?) -> ())
+    func getCharactersListBySeries(name: String, onSuccess: @escaping ([CharacterItemDataOut]?) -> (), onError: @escaping (Error?) -> ())
+    
 }

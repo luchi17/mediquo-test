@@ -15,7 +15,44 @@ class CharacterListManager: NSObject, CharacterListManagerProtocol {
     }
     
     func getCharacterListData(onSuccess: @escaping (CharacterListModel) -> (), onError: @escaping (Error?) -> ()) {
-        self.dataSource.getCharacterListData { itemsList in
+        
+        var charactersListModel = CharacterListModel()
+        
+        self.getCharacters(by: Series.betterCallSaul.rawValue) { betterCallSaulCharactersDataOut in
+            
+            var betterCallSaulCharacters: [CharacterItemModel] = []
+            
+            for character in betterCallSaulCharactersDataOut {
+                betterCallSaulCharacters.append(character)
+            }
+            
+            charactersListModel.betterCallSaulCharacters = betterCallSaulCharacters
+            
+            self.getCharacters(by: Series.breakingBad.rawValue) { breakingBadCharactersDataOut in
+                
+                var breakingBadCharacters: [CharacterItemModel] = []
+                
+                for character in breakingBadCharactersDataOut {
+                    breakingBadCharacters.append(character)
+                }
+                
+                charactersListModel.breakingBadCharacters = breakingBadCharacters
+                
+                onSuccess(charactersListModel)
+                
+            } onError: { error in
+                onError(nil)
+            }
+            
+        } onError: { error in
+            onError(error)
+        }
+    }
+    
+    private func getCharacters(by series: String, onSuccess: @escaping ([CharacterItemModel]) -> (), onError: @escaping (Error?) -> ()) {
+        
+        self.dataSource.getCharactersListBySeries(name: series) { itemsList in
+            
             if let itemsList = itemsList {
                 
                 var characterItems: [CharacterItemModel] = []
@@ -24,13 +61,15 @@ class CharacterListManager: NSObject, CharacterListManagerProtocol {
                     let characterItem = CharacterItemModel(id: itemDataOut.char_id,
                                                            name: itemDataOut.name,
                                                            image: itemDataOut.img,
-                                                           nickname: itemDataOut.nickname)
+                                                           nickname: itemDataOut.nickname,
+                                                           series: Series.betterCallSaul.rawValue,
+                                                           seasons: itemDataOut.appearance)
                     
                     characterItems.append(characterItem)
                 }
+            
+                onSuccess(characterItems)
                 
-                let characterListModel = CharacterListModel(items: characterItems)
-                onSuccess(characterListModel)
             } else {
                 onError(nil)
             }
@@ -44,4 +83,9 @@ class CharacterListManager: NSObject, CharacterListManagerProtocol {
 
 protocol CharacterListManagerProtocol {
     func getCharacterListData(onSuccess: @escaping (CharacterListModel) -> (), onError: @escaping (Error?) -> ())
+}
+
+enum Series: String {
+    case breakingBad = "Better Call Saul"
+    case betterCallSaul = "Breaking Bad"
 }

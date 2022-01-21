@@ -9,5 +9,6 @@ import Foundation
 
 
 struct CharacterListModel {
-    var items: [CharacterItemModel] = []
+    var breakingBadCharacters: [CharacterItemModel]?
+    var betterCallSaulCharacters: [CharacterItemModel]?
 }
