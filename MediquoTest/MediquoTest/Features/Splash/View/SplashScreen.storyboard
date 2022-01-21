@@ -11,15 +11,15 @@
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
             <objects>
-                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SplashScreenViewControllerId" id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LYk-RH-pYl">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hgK-ua-nSm">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MediquoTest" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="fF3-iq-zae">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MediquoTest" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="1g4-kp-f1j">
                                         <rect key="frame" x="0.0" y="426.5" width="414" height="43"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -29,19 +29,19 @@
                                 <color key="backgroundColor" systemColor="systemTealColor"/>
                                 <color key="tintColor" red="0.98039215690000003" green="0.41960784309999999" blue="0.90980392160000001" alpha="0.82628283859999996" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="fF3-iq-zae" firstAttribute="centerY" secondItem="LYk-RH-pYl" secondAttribute="centerY" id="EnE-I9-3vm"/>
-                                    <constraint firstAttribute="trailing" secondItem="fF3-iq-zae" secondAttribute="trailing" id="Xbo-vK-Lbr"/>
-                                    <constraint firstItem="fF3-iq-zae" firstAttribute="centerX" secondItem="LYk-RH-pYl" secondAttribute="centerX" id="aOq-IJ-FCL"/>
+                                    <constraint firstAttribute="trailing" secondItem="1g4-kp-f1j" secondAttribute="trailing" id="0fi-cE-7qc"/>
+                                    <constraint firstItem="1g4-kp-f1j" firstAttribute="centerY" secondItem="hgK-ua-nSm" secondAttribute="centerY" id="Pjr-EY-XJH"/>
+                                    <constraint firstItem="1g4-kp-f1j" firstAttribute="centerX" secondItem="hgK-ua-nSm" secondAttribute="centerX" id="ytP-jn-jIq"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="LYk-RH-pYl" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="5D4-zC-QgD"/>
-                            <constraint firstItem="LYk-RH-pYl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JRG-sG-7Vk"/>
-                            <constraint firstItem="LYk-RH-pYl" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="SG3-4m-v91"/>
-                            <constraint firstAttribute="bottom" secondItem="LYk-RH-pYl" secondAttribute="bottom" id="zky-09-Lzu"/>
+                            <constraint firstAttribute="trailing" secondItem="hgK-ua-nSm" secondAttribute="trailing" id="5o2-Wm-ocO"/>
+                            <constraint firstItem="hgK-ua-nSm" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" id="IYR-te-lBI"/>
+                            <constraint firstItem="hgK-ua-nSm" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="T31-ei-MzM"/>
+                            <constraint firstAttribute="bottom" secondItem="hgK-ua-nSm" secondAttribute="bottom" id="Yzq-Ik-HXn"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -51,9 +51,6 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
