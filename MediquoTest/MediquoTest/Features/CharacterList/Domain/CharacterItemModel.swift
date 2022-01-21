@@ -16,7 +16,7 @@ struct CharacterItemModel: Equatable, Hashable {
     
     var id: Int
     var name: String
-    var image: String
+    var image: UIImage?
     var nickname: String
     var series: String
     var seasons: [Int]

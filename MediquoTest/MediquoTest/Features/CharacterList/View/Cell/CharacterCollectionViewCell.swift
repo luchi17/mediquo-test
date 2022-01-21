@@ -1,5 +1,5 @@
 //
-//  CakeCollectionViewCell.swift
+//  CharacterCollectionViewCell.swift
 //  MediquoTest
 //
 //  Created by Mariluz Parejo on 26/11/21.
@@ -44,12 +44,10 @@ class CharacterCollectionViewCell: UICollectionViewCell {
         
         titleLabel.text = model.name
         nickNameLabel.text = model.nickname
+        imageView.image = model.image
         
-        let image = Utils.getImage(from: model.image)
-        imageView.image = image
-        
-        if image != nil {
-            imageView.image = image
+        if model.image != nil {
+            imageView.image = model.image
             errorLabel.isHidden = true
         } else {
             errorLabel.text = "Image could not be loaded"
