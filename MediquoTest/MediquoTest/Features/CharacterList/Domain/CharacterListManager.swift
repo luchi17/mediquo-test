@@ -60,7 +60,7 @@ class CharacterListManager: NSObject, CharacterListManagerProtocol {
                 for itemDataOut in itemsList {
                     let characterItem = CharacterItemModel(id: itemDataOut.char_id,
                                                            name: itemDataOut.name,
-                                                           image: itemDataOut.img,
+                                                           image: Utils.getImage(from: itemDataOut.img),
                                                            nickname: itemDataOut.nickname,
                                                            series: Series.betterCallSaul.rawValue,
                                                            seasons: itemDataOut.appearance)
