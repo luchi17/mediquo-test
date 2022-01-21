@@ -11,19 +11,19 @@ class CharacterListDataSource : NSObject, CharacterListDataSourceProtocol {
     
     var networkManager: NetworkManager = NetworkManager()
     
-    func getCharacterListData(onSuccess: @escaping (CharacterListDataOut?) -> (), onError: @escaping (Error?) -> ()) {
+    func getCharacterListData(onSuccess: @escaping ([CharacterItemDataOut]?) -> (), onError: @escaping (Error?) -> ()) {
         
         networkManager.doJSONRequest(endpointKey: EndpointRepositoryKeys.charactersList.rawValue,
                                      onSuccess: onSuccess,
                                      onError: onError)
     }
     
-    func getCharacterByNameData(name: String, onSuccess: @escaping (CharacterListDataOut?) -> (), onError: @escaping (Error?) -> ()) {
+    func getCharacterByNameData(name: String, onSuccess: @escaping ([CharacterItemDataOut]?) -> (), onError: @escaping (Error?) -> ()) {
         
     }
 }
 
 protocol CharacterListDataSourceProtocol {
-    func getCharacterListData(onSuccess: @escaping (CharacterListDataOut?) -> (), onError: @escaping (Error?) -> ())
-    func getCharacterByNameData(name: String, onSuccess: @escaping (CharacterListDataOut?) -> (), onError: @escaping (Error?) -> ())
+    func getCharacterListData(onSuccess: @escaping ([CharacterItemDataOut]?) -> (), onError: @escaping (Error?) -> ())
+    func getCharacterByNameData(name: String, onSuccess: @escaping ([CharacterItemDataOut]?) -> (), onError: @escaping (Error?) -> ())
 }

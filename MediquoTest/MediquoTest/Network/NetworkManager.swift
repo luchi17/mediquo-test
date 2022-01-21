@@ -9,7 +9,7 @@ import Foundation
 
 class NetworkManager {
     
-    private let baseURLString = "https://www.breakingbadapi.com/api/"
+    private let baseURLString = "https://www.breakingbadapi.com/api"
     
     init() { }
     
@@ -28,8 +28,8 @@ class NetworkManager {
 
                     let jsonDecoder = JSONDecoder()
 
-                    let data = try? jsonDecoder.decode(T.self, from: data)
-                    onSuccess(data)
+                    let dataDecoded = try? jsonDecoder.decode(T.self, from: data)
+                    onSuccess(dataDecoded)
                 }
             }
         }.resume()

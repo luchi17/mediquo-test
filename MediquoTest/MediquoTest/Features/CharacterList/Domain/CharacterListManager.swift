@@ -16,14 +16,16 @@ class CharacterListManager: NSObject, CharacterListManagerProtocol {
     
     func getCharacterListData(onSuccess: @escaping (CharacterListModel) -> (), onError: @escaping (Error?) -> ()) {
         self.dataSource.getCharacterListData { itemsList in
-            if let itemsList = itemsList, let itemsDataOut = itemsList.items {
+            if let itemsList = itemsList {
                 
                 var characterItems: [CharacterItemModel] = []
             
-                for itemDataOut in itemsDataOut {
-                    let characterItem = CharacterItemModel(title: itemDataOut.title,
-                                                 description: itemDataOut.desc,
-                                                 imageUrlString: itemDataOut.image)
+                for itemDataOut in itemsList {
+                    let characterItem = CharacterItemModel(id: itemDataOut.char_id,
+                                                           name: itemDataOut.name,
+                                                           image: itemDataOut.img,
+                                                           nickname: itemDataOut.nickname)
+                    
                     characterItems.append(characterItem)
                 }
                 
