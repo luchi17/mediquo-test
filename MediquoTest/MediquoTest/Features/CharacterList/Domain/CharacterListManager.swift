@@ -19,24 +19,21 @@ class CharacterListManager: NSObject, CharacterListManagerProtocol {
         var charactersListModel = CharacterListModel()
         
         self.getCharacters(by: Series.betterCallSaul.rawValue) { betterCallSaulCharactersDataOut in
-            
-            var betterCallSaulCharacters: [CharacterItemModel] = []
-            
-            for character in betterCallSaulCharactersDataOut {
-                betterCallSaulCharacters.append(character)
-            }
-            
-            charactersListModel.betterCallSaulCharacters = betterCallSaulCharacters
-            
+
             self.getCharacters(by: Series.breakingBad.rawValue) { breakingBadCharactersDataOut in
                 
                 var breakingBadCharacters: [CharacterItemModel] = []
+                var betterCallSaulCharacters: [CharacterItemModel] = []
                 
                 for character in breakingBadCharactersDataOut {
                     breakingBadCharacters.append(character)
                 }
+                for character in betterCallSaulCharactersDataOut {
+                    betterCallSaulCharacters.append(character)
+                }
                 
                 charactersListModel.breakingBadCharacters = breakingBadCharacters
+                charactersListModel.betterCallSaulCharacters = betterCallSaulCharacters
                 
                 onSuccess(charactersListModel)
                 
