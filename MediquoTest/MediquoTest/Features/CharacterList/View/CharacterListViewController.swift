@@ -20,6 +20,11 @@ class CharacterListViewController: UIViewController {
     
     private var currentItemsToShow: [CharacterItemModel] = []
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
