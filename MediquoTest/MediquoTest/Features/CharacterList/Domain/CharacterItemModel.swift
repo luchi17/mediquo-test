@@ -11,13 +11,11 @@ import UIKit
 struct CharacterItemModel: Equatable, Hashable {
     
     static func == (lhs: CharacterItemModel, rhs: CharacterItemModel) -> Bool {
-        return lhs.title == rhs.title &&
-        lhs.description == rhs.description &&
-        lhs.imageUrlString == rhs.imageUrlString
+        return lhs.id == rhs.id
     }
     
-    var title: String
-    var description: String
-    var imageUrlString: String
-    
+    var id: Int
+    var name: String
+    var image: String
+    var nickname: String
 }
