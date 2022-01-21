@@ -126,7 +126,8 @@ extension CharacterListViewController: UICollectionViewDataSource {
         let characterItem = self.currentItemsToShow[indexPath.row]
         
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: CharacterCollectionViewCell.self), for: indexPath) as? CharacterCollectionViewCell {
-            
+            cell.layer.shouldRasterize = true
+            cell.layer.rasterizationScale = UIScreen.main.scale
             cell.configureCell(model: characterItem)
             
             return cell
