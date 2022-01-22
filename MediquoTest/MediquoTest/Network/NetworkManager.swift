@@ -19,20 +19,26 @@ class NetworkManager {
         
         guard let url = URL(string: urlString) else { return }
         
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            if error != nil || data == nil {
-                onError(error)
-                
-            } else {
-                if let data = data {
+        DispatchQueue.main.async {
+            
+            URLSession.shared.dataTask(with: url) { (data, response, error) in
+                if error != nil || data == nil {
+                    onError(error)
+                    
+                } else {
+                    if let data = data {
 
-                    let jsonDecoder = JSONDecoder()
+                        let jsonDecoder = JSONDecoder()
 
-                    let dataDecoded = try? jsonDecoder.decode(T.self, from: data)
-                    onSuccess(dataDecoded)
+                        let dataDecoded = try? jsonDecoder.decode(T.self, from: data)
+                        
+                        print(String(decoding: data, as: UTF8.self))
+                        
+                        onSuccess(dataDecoded)
+                    }
                 }
-            }
-        }.resume()
+            }.resume()
+        }
     }
     
     private func setupRequestUrlString(endpointKey: String, queryParams : [String: String]? = nil) -> String {
