@@ -27,6 +27,8 @@
 		BCCB0111279ADFE400B1CB52 /* CharacterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCCB010C279ADFE400B1CB52 /* CharacterCollectionViewCell.xib */; };
 		BCCB0115279AE3EA00B1CB52 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCCB0114279AE3EA00B1CB52 /* SplashScreen.storyboard */; };
 		BCCB0117279B092800B1CB52 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB0116279B092800B1CB52 /* Utils.swift */; };
+		BCCB011C279B0E9700B1CB52 /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB011A279B0E9700B1CB52 /* CharacterDetailViewController.swift */; };
+		BCCB011D279B0E9700B1CB52 /* CharacterDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCCB011B279B0E9700B1CB52 /* CharacterDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		BCCB010C279ADFE400B1CB52 /* CharacterCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CharacterCollectionViewCell.xib; sourceTree = "<group>"; };
 		BCCB0114279AE3EA00B1CB52 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
 		BCCB0116279B092800B1CB52 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		BCCB011A279B0E9700B1CB52 /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
+		BCCB011B279B0E9700B1CB52 /* CharacterDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CharacterDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,7 @@
 		BCCB00DD279AC10600B1CB52 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				BCCB0118279B0E9700B1CB52 /* CharacterDetail */,
 				BCCB00E2279AC13800B1CB52 /* CharacterList */,
 			);
 			path = Features;
@@ -182,6 +187,39 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		BCCB0118279B0E9700B1CB52 /* CharacterDetail */ = {
+			isa = PBXGroup;
+			children = (
+				BCCB011F279B56E500B1CB52 /* Domain */,
+				BCCB011E279B56DF00B1CB52 /* Data */,
+				BCCB0119279B0E9700B1CB52 /* View */,
+			);
+			path = CharacterDetail;
+			sourceTree = "<group>";
+		};
+		BCCB0119279B0E9700B1CB52 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BCCB011A279B0E9700B1CB52 /* CharacterDetailViewController.swift */,
+				BCCB011B279B0E9700B1CB52 /* CharacterDetailViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BCCB011E279B56DF00B1CB52 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		BCCB011F279B56E500B1CB52 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -243,6 +281,7 @@
 				BCCB0115279AE3EA00B1CB52 /* SplashScreen.storyboard in Resources */,
 				BCCB0111279ADFE400B1CB52 /* CharacterCollectionViewCell.xib in Resources */,
 				BCCB00B2279AB99400B1CB52 /* Assets.xcassets in Resources */,
+				BCCB011D279B0E9700B1CB52 /* CharacterDetailViewController.xib in Resources */,
 				BCCB010E279ADFE400B1CB52 /* CharacterListViewController.xib in Resources */,
 				BCCB00AD279AB98F00B1CB52 /* Main.storyboard in Resources */,
 			);
@@ -270,6 +309,7 @@
 				BCCB0103279AD53200B1CB52 /* NetworkManager.swift in Sources */,
 				BCCB0110279ADFE400B1CB52 /* CharacterCollectionViewCell.swift in Sources */,
 				BCCB00FD279AC13800B1CB52 /* CharacterItemModel.swift in Sources */,
+				BCCB011C279B0E9700B1CB52 /* CharacterDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
