@@ -26,15 +26,6 @@ class CharacterListDataSource : NSObject, CharacterListDataSourceProtocol {
                                      onSuccess: onSuccess,
                                      onError: onError)
     }
-    
-    func getCharacterQuotes(name: String, onSuccess: @escaping ([CharacterItemDataOut]?) -> (), onError: @escaping (Error?) -> ()) {
-        
-        let queryParams = ["author": name]
-        networkManager.doJSONRequest(endpointKey: EndpointRepositoryKeys.charactersList.rawValue,
-                                     queryParams: queryParams,
-                                     onSuccess: onSuccess,
-                                     onError: onError)
-    }
 
     func getCharacterByName(name: String, onSuccess: @escaping ([CharacterItemDataOut]?) -> (), onError: @escaping (Error?) -> ()) {
         
@@ -47,7 +38,6 @@ protocol CharacterListDataSourceProtocol {
     
     func getCharactersListData(onSuccess: @escaping ([CharacterItemDataOut]?) -> (), onError: @escaping (Error?) -> ())
     func getCharacterByName(name: String, onSuccess: @escaping ([CharacterItemDataOut]?) -> (), onError: @escaping (Error?) -> ())
-    func getCharacterQuotes(name: String, onSuccess: @escaping ([CharacterItemDataOut]?) -> (), onError: @escaping (Error?) -> ())
     func getCharactersListBySeries(name: String, onSuccess: @escaping ([CharacterItemDataOut]?) -> (), onError: @escaping (Error?) -> ())
     
 }
