@@ -136,6 +136,13 @@ extension CharacterListViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        let characterItemModel = self.currentItemsToShow[indexPath.row]
+        
+        let characterDetailVC = CharacterDetailViewController(nibName: String(describing: CharacterDetailViewController.self), bundle: nil)
+        
+        characterDetailVC.model = characterItemModel
+        
+        self.navigationController?.pushViewController(characterDetailVC, animated: false)
     }
 }
 
