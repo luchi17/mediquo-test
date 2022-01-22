@@ -9,44 +9,73 @@ import UIKit
 
 class CharacterDetailViewController: UIViewController {
 
+    @IBOutlet private weak var contentView: UIView!
+    
     @IBOutlet private weak var imageView: UIImageView!
-    @IBOutlet private weak var titleLabel: UILabel!
-    @IBOutlet private weak var subtitleLabel: UILabel!
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var nameValueLabel: UILabel!
+    @IBOutlet private weak var nickLabel: UILabel!
+    @IBOutlet private weak var nickValueLabel: UILabel!
+    
+    @IBOutlet private weak var ageLabel: UILabel!
+    @IBOutlet private weak var ageValueLabel: UILabel!
+    @IBOutlet private weak var seasonsLabel: UILabel!
+    @IBOutlet private weak var seasonsValueLabel: UILabel!
+    @IBOutlet private weak var quotesLabel: UILabel!
+    @IBOutlet private weak var quotesValueLabel: UILabel!
+    
+    @IBOutlet private weak var descriptionTitleLabel: UILabel!
     
     var model: CharacterItemModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        configureUI()
+        self.configureUI()
+        self.setModel()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        self.navigationController?.navigationItem.backButtonTitle = ""
+        self.navigationController?.navigationBar.backgroundColor = .clear
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white]
+        self.navigationController?.navigationBar.barTintColor = .clear // change the navigation background color
     }
     
     func configureUI() {
-        titleLabel.numberOfLines = 0
-        titleLabel.textAlignment = .center
-        titleLabel.font = UIFont(name: "GillSans-Bold", size: 16)
         
-        subtitleLabel.numberOfLines = 0
-        subtitleLabel.textAlignment = .center
-        subtitleLabel.font = UIFont(name: "GillSans-Bold", size: 14)
+        contentView.backgroundColor = UIColor.systemTeal.withAlphaComponent(0.4)
         
-        imageView.contentMode = .scaleAspectFit
+        [nameLabel, nickLabel, ageLabel, seasonsLabel, quotesLabel].forEach({
+            $0?.numberOfLines = 0
+            $0?.font = UIFont(name: "GillSans-Bold", size: 16)
+            $0?.textColor = UIColor.black
+        })
         
-        setModel()
+        [nameValueLabel, nickValueLabel, ageValueLabel, seasonsValueLabel, quotesValueLabel].forEach({
+            $0?.numberOfLines = 0
+            $0?.font = UIFont(name: "GillSans", size: 16)
+            $0?.textColor = UIColor.black
+        })
+        
+        descriptionTitleLabel.font = UIFont(name: "GillSans", size: 18)
+        imageView.layer.cornerRadius = 12.0
     }
     
-    func setModel() {
-//        titleLabel.text = model?.title
-//        subtitleLabel.text = model?.description
-//        if let imageUrlString = model?.imageUrlString {
-//            imageView.image = Utils.getImage(from: imageUrlString)
-//        }
+    private func setModel() {
         
+        nameLabel.text = ""
+        nickLabel.text = ""
+        ageLabel.text = ""
+        seasonsLabel.text = ""
+        quotesLabel.text = ""
+        
+        imageView.image = model?.image
+        nameValueLabel.text = model?.name
+        nickValueLabel.text = model?.nickname
+        ageValueLabel.text = model?.age
+        seasonsValueLabel.text = model?.seasons
+        quotesValueLabel.text = model?.quotes
     }
 }
-
-
-//Cabecera: imagen, nick, nombre del actor.
-//Detalle: nombre, edad, temporadas en las que aparece y
-
-//sus frases famosas. --> /api/quote?author=Jesse+Pinkman
