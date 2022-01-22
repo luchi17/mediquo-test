@@ -34,15 +34,17 @@ class CharacterListViewController: UIViewController {
         
         viewModel.bindCharacterListModel = { list in
             
-            guard let list = list else { return }
+            guard let list = list else {
+                self.showErrorAlert()
+                return }
             
             self.characterListModel = list
             
             self.updateItemsToShow()
-            
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
-            }
+        }
+        
+        viewModel.bindServiceError = { error in
+            self.showErrorAlert(message: error.localizedDescription)
         }
     }
     
@@ -105,6 +107,24 @@ class CharacterListViewController: UIViewController {
         }
     }
     
+    func showErrorAlert(message: String? = nil) {
+        let message = message == nil ? "Server error" : message
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        let closeAction = UIAlertAction(title: "Close", style: .default, handler: { _ in
+            alert.dismiss(animated: false, completion: nil)
+        })
+        let retryAction = UIAlertAction(title: "Retry", style: .default, handler: { _ in
+            alert.dismiss(animated: false, completion: {
+                self.viewModel.loadCharacterList()
+            })
+        })
+        alert.addAction(closeAction)
+        alert.addAction(retryAction)
+        DispatchQueue.main.async {
+            self.present(alert, animated: false, completion: nil)
+        }
+    }
+    
     @IBAction func updateListButtonTouchUpInside(_ sender: UIButton) {
         
     }
@@ -126,6 +146,7 @@ extension CharacterListViewController: UICollectionViewDataSource {
         let characterItem = self.currentItemsToShow[indexPath.row]
         
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: CharacterCollectionViewCell.self), for: indexPath) as? CharacterCollectionViewCell {
+            
             cell.configureCell(model: characterItem)
             
             return cell
