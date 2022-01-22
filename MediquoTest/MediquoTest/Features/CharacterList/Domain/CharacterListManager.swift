@@ -55,13 +55,15 @@ class CharacterListManager: NSObject, CharacterListManagerProtocol {
                 var characterItems: [CharacterItemModel] = []
             
                 for itemDataOut in itemsList {
+                    
                     let characterItem = CharacterItemModel(id: itemDataOut.char_id,
                                                            name: itemDataOut.name,
                                                            image: Utils.getImage(from: itemDataOut.img),
+                                                           age: Utils.getAgeFromBirthDate(dateString: itemDataOut.birthday),
                                                            nickname: itemDataOut.nickname,
                                                            series: Series.betterCallSaul.rawValue,
-                                                           seasons: itemDataOut.appearance)
-                    
+                                                           seasons: self.setUpSeasons(seasons: itemDataOut.appearance))
+                   
                     characterItems.append(characterItem)
                 }
             
@@ -74,7 +76,14 @@ class CharacterListManager: NSObject, CharacterListManagerProtocol {
         } onError: { error in
             onError(error)
         }
-
+    }
+    
+    private func setUpSeasons(seasons: [Int]) -> String {
+        var seasonsString: String = ""
+        for season in seasons {
+            seasonsString = "Season: " + String(season) + "\n"
+        }
+        return seasonsString
     }
 }
 

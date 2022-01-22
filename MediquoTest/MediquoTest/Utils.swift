@@ -24,5 +24,17 @@ class Utils {
         }
         return image
     }
+    
+    static func getAgeFromBirthDate(dateString: String) -> String {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "es")
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        guard let myDate = dateFormatter.date(from: dateString) else { return "Unknown" }
+
+        let age: Int = Calendar.current.dateComponents([.year], from: myDate, to: Date()).year ?? 0
+        
+        return String(age)
+    }
 
 }

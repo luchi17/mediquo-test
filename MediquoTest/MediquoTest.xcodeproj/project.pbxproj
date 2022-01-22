@@ -13,7 +13,6 @@
 		BCCB00B2279AB99400B1CB52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCCB00B1279AB99400B1CB52 /* Assets.xcassets */; };
 		BCCB00F9279AC13800B1CB52 /* CharacterListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB00EB279AC13800B1CB52 /* CharacterListDataSource.swift */; };
 		BCCB00FA279AC13800B1CB52 /* CharacterItemDataOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB00EC279AC13800B1CB52 /* CharacterItemDataOut.swift */; };
-		BCCB00FB279AC13800B1CB52 /* CharacterListDataOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB00ED279AC13800B1CB52 /* CharacterListDataOut.swift */; };
 		BCCB00FC279AC13800B1CB52 /* CharacterListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB00EF279AC13800B1CB52 /* CharacterListManager.swift */; };
 		BCCB00FD279AC13800B1CB52 /* CharacterItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB00F0279AC13800B1CB52 /* CharacterItemModel.swift */; };
 		BCCB00FE279AC13800B1CB52 /* CharacterListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB00F1279AC13800B1CB52 /* CharacterListModel.swift */; };
@@ -29,6 +28,9 @@
 		BCCB0117279B092800B1CB52 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB0116279B092800B1CB52 /* Utils.swift */; };
 		BCCB011C279B0E9700B1CB52 /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB011A279B0E9700B1CB52 /* CharacterDetailViewController.swift */; };
 		BCCB011D279B0E9700B1CB52 /* CharacterDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCCB011B279B0E9700B1CB52 /* CharacterDetailViewController.xib */; };
+		BCCB0128279C3A1900B1CB52 /* CharacterDetailDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB0121279C3A1900B1CB52 /* CharacterDetailDataSource.swift */; };
+		BCCB0129279C3A1900B1CB52 /* QuoteDataOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB0122279C3A1900B1CB52 /* QuoteDataOut.swift */; };
+		BCCB012C279C3A1900B1CB52 /* CharacterDetailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB0126279C3A1900B1CB52 /* CharacterDetailManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +42,6 @@
 		BCCB00B6279AB99400B1CB52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCCB00EB279AC13800B1CB52 /* CharacterListDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterListDataSource.swift; sourceTree = "<group>"; };
 		BCCB00EC279AC13800B1CB52 /* CharacterItemDataOut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterItemDataOut.swift; sourceTree = "<group>"; };
-		BCCB00ED279AC13800B1CB52 /* CharacterListDataOut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterListDataOut.swift; sourceTree = "<group>"; };
 		BCCB00EF279AC13800B1CB52 /* CharacterListManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterListManager.swift; sourceTree = "<group>"; };
 		BCCB00F0279AC13800B1CB52 /* CharacterItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterItemModel.swift; sourceTree = "<group>"; };
 		BCCB00F1279AC13800B1CB52 /* CharacterListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterListModel.swift; sourceTree = "<group>"; };
@@ -56,6 +57,9 @@
 		BCCB0116279B092800B1CB52 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		BCCB011A279B0E9700B1CB52 /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
 		BCCB011B279B0E9700B1CB52 /* CharacterDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CharacterDetailViewController.xib; sourceTree = "<group>"; };
+		BCCB0121279C3A1900B1CB52 /* CharacterDetailDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterDetailDataSource.swift; sourceTree = "<group>"; };
+		BCCB0122279C3A1900B1CB52 /* QuoteDataOut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteDataOut.swift; sourceTree = "<group>"; };
+		BCCB0126279C3A1900B1CB52 /* CharacterDetailManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterDetailManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,7 +129,6 @@
 			children = (
 				BCCB00EB279AC13800B1CB52 /* CharacterListDataSource.swift */,
 				BCCB00EC279AC13800B1CB52 /* CharacterItemDataOut.swift */,
-				BCCB00ED279AC13800B1CB52 /* CharacterListDataOut.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -190,8 +193,8 @@
 		BCCB0118279B0E9700B1CB52 /* CharacterDetail */ = {
 			isa = PBXGroup;
 			children = (
-				BCCB011F279B56E500B1CB52 /* Domain */,
-				BCCB011E279B56DF00B1CB52 /* Data */,
+				BCCB0120279C3A1900B1CB52 /* Data */,
+				BCCB0124279C3A1900B1CB52 /* Domain */,
 				BCCB0119279B0E9700B1CB52 /* View */,
 			);
 			path = CharacterDetail;
@@ -206,16 +209,19 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		BCCB011E279B56DF00B1CB52 /* Data */ = {
+		BCCB0120279C3A1900B1CB52 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				BCCB0121279C3A1900B1CB52 /* CharacterDetailDataSource.swift */,
+				BCCB0122279C3A1900B1CB52 /* QuoteDataOut.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
 		};
-		BCCB011F279B56E500B1CB52 /* Domain */ = {
+		BCCB0124279C3A1900B1CB52 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				BCCB0126279C3A1900B1CB52 /* CharacterDetailManager.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -300,16 +306,18 @@
 				BCCB00B0279AB98F00B1CB52 /* MediquoTest.xcdatamodeld in Sources */,
 				BCCB00A6279AB98F00B1CB52 /* AppDelegate.swift in Sources */,
 				BCCB0117279B092800B1CB52 /* Utils.swift in Sources */,
-				BCCB00FB279AC13800B1CB52 /* CharacterListDataOut.swift in Sources */,
 				BCCB0101279AD39B00B1CB52 /* EndpointRepositoryKeys.swift in Sources */,
 				BCCB00FC279AC13800B1CB52 /* CharacterListManager.swift in Sources */,
+				BCCB012C279C3A1900B1CB52 /* CharacterDetailManager.swift in Sources */,
 				BCCB00FE279AC13800B1CB52 /* CharacterListModel.swift in Sources */,
 				BCCB010D279ADFE400B1CB52 /* CharacterListViewModel.swift in Sources */,
 				BCCB00F9279AC13800B1CB52 /* CharacterListDataSource.swift in Sources */,
 				BCCB0103279AD53200B1CB52 /* NetworkManager.swift in Sources */,
+				BCCB0128279C3A1900B1CB52 /* CharacterDetailDataSource.swift in Sources */,
 				BCCB0110279ADFE400B1CB52 /* CharacterCollectionViewCell.swift in Sources */,
 				BCCB00FD279AC13800B1CB52 /* CharacterItemModel.swift in Sources */,
 				BCCB011C279B0E9700B1CB52 /* CharacterDetailViewController.swift in Sources */,
+				BCCB0129279C3A1900B1CB52 /* QuoteDataOut.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
