@@ -17,6 +17,7 @@ class CharacterListViewModel: NSObject {
     }
     
     var bindCharacterListModel : ((CharacterListModel?) -> ()) = { response in }
+    var bindServiceError : ((Error) -> ()) = { error in }
     
     init(characterListManager: CharacterListManagerProtocol) {
         self.characterListManager = characterListManager
@@ -29,9 +30,10 @@ extension CharacterListViewModel: CharacterListInterfaceToViewModelProtocol {
         characterListManager.getCharacterListData { characterListModel in
             self.characterListModel = characterListModel
         } onError: { error in
-            
+            if let error = error {
+                self.bindServiceError(error)
+            }
         }
-
     }
 }
 
@@ -39,4 +41,5 @@ extension CharacterListViewModel: CharacterListInterfaceToViewModelProtocol {
 protocol CharacterListInterfaceToViewModelProtocol {
     func loadCharacterList()
     var bindCharacterListModel: ((CharacterListModel?) -> ()) { get set }
+    var bindServiceError : ((Error) -> ()) { get set }
 }
