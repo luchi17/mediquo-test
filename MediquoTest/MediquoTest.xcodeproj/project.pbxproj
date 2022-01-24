@@ -36,6 +36,9 @@
 		BCCB0147279E9B2100B1CB52 /* structured-swift4.stencil in Resources */ = {isa = PBXBuildFile; fileRef = BCCB013F279E9B2100B1CB52 /* structured-swift4.stencil */; };
 		BCCB014B279E9E6000B1CB52 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB014A279E9E6000B1CB52 /* LocalStorage.swift */; };
 		BCCB014D279E9E8500B1CB52 /* AppLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB014C279E9E8500B1CB52 /* AppLanguage.swift */; };
+		BCCB014F279EB40B00B1CB52 /* Locale-App.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB014E279EB40B00B1CB52 /* Locale-App.swift */; };
+		BCCB0152279EB89F00B1CB52 /* Bundle-AppLocale.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB0151279EB89F00B1CB52 /* Bundle-AppLocale.swift */; };
+		BCCB0154279EB8D100B1CB52 /* DispatchQueue-Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB0153279EB8D100B1CB52 /* DispatchQueue-Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +74,9 @@
 		BCCB0149279E9CAA00B1CB52 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BCCB014A279E9E6000B1CB52 /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		BCCB014C279E9E8500B1CB52 /* AppLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLanguage.swift; sourceTree = "<group>"; };
+		BCCB014E279EB40B00B1CB52 /* Locale-App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Locale-App.swift"; sourceTree = "<group>"; };
+		BCCB0151279EB89F00B1CB52 /* Bundle-AppLocale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-AppLocale.swift"; sourceTree = "<group>"; };
+		BCCB0153279EB8D100B1CB52 /* DispatchQueue-Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue-Extensions.swift"; sourceTree = "<group>"; };
 		C8703BC0EBC0A1113DA52553 /* Pods-MediquoTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediquoTest.release.xcconfig"; path = "Target Support Files/Pods-MediquoTest/Pods-MediquoTest.release.xcconfig"; sourceTree = "<group>"; };
 		CF8429B6F5F176D77433F2A7 /* Pods-MediquoTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediquoTest.debug.xcconfig"; path = "Target Support Files/Pods-MediquoTest/Pods-MediquoTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -260,11 +266,10 @@
 		BCCB012E279E9B2100B1CB52 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BCCB0150279EB88300B1CB52 /* Language */,
 				BCCB012F279E9B2100B1CB52 /* Assets.xcassets */,
 				BCCB0130279E9B2100B1CB52 /* Utils.swift */,
 				BCCB0132279E9B2100B1CB52 /* Localization */,
-				BCCB014A279E9E6000B1CB52 /* LocalStorage.swift */,
-				BCCB014C279E9E8500B1CB52 /* AppLanguage.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -277,6 +282,18 @@
 				BCCB013F279E9B2100B1CB52 /* structured-swift4.stencil */,
 			);
 			path = Localization;
+			sourceTree = "<group>";
+		};
+		BCCB0150279EB88300B1CB52 /* Language */ = {
+			isa = PBXGroup;
+			children = (
+				BCCB014E279EB40B00B1CB52 /* Locale-App.swift */,
+				BCCB014A279E9E6000B1CB52 /* LocalStorage.swift */,
+				BCCB014C279E9E8500B1CB52 /* AppLanguage.swift */,
+				BCCB0151279EB89F00B1CB52 /* Bundle-AppLocale.swift */,
+				BCCB0153279EB8D100B1CB52 /* DispatchQueue-Extensions.swift */,
+			);
+			path = Language;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -405,12 +422,14 @@
 			files = (
 				BCCB0145279E9B2100B1CB52 /* Localization.swift in Sources */,
 				BCCB0105279AD64100B1CB52 /* RequestEncoding.swift in Sources */,
+				BCCB0154279EB8D100B1CB52 /* DispatchQueue-Extensions.swift in Sources */,
 				BCCB00FA279AC13800B1CB52 /* CharacterItemDataOut.swift in Sources */,
 				BCCB010F279ADFE400B1CB52 /* CharacterListViewController.swift in Sources */,
 				BCCB00A6279AB98F00B1CB52 /* AppDelegate.swift in Sources */,
 				BCCB0101279AD39B00B1CB52 /* EndpointRepositoryKeys.swift in Sources */,
 				BCCB00FC279AC13800B1CB52 /* CharacterListManager.swift in Sources */,
 				BCCB012C279C3A1900B1CB52 /* CharacterDetailManager.swift in Sources */,
+				BCCB014F279EB40B00B1CB52 /* Locale-App.swift in Sources */,
 				BCCB00FE279AC13800B1CB52 /* CharacterListModel.swift in Sources */,
 				BCCB010D279ADFE400B1CB52 /* CharacterListViewModel.swift in Sources */,
 				BCCB00F9279AC13800B1CB52 /* CharacterListDataSource.swift in Sources */,
@@ -419,6 +438,7 @@
 				BCCB0128279C3A1900B1CB52 /* CharacterDetailDataSource.swift in Sources */,
 				BCCB0110279ADFE400B1CB52 /* CharacterCollectionViewCell.swift in Sources */,
 				BCCB00FD279AC13800B1CB52 /* CharacterItemModel.swift in Sources */,
+				BCCB0152279EB89F00B1CB52 /* Bundle-AppLocale.swift in Sources */,
 				BCCB011C279B0E9700B1CB52 /* CharacterDetailViewController.swift in Sources */,
 				BCCB014D279E9E8500B1CB52 /* AppLanguage.swift in Sources */,
 				BCCB0129279C3A1900B1CB52 /* QuoteDataOut.swift in Sources */,
