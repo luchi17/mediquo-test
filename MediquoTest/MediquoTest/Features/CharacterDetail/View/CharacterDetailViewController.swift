@@ -45,17 +45,15 @@ class CharacterDetailViewController: UIViewController {
         
         [nameLabel, nickLabel, ageLabel, seasonsLabel, quotesLabel].forEach({
             $0?.numberOfLines = 0
+            $0?.textAlignment = .center
             $0?.font = UIFont(name: "GillSans-Bold", size: 16)
-            $0?.textColor = UIColor.black
         })
         
         [nameValueLabel, nickValueLabel, ageValueLabel, seasonsValueLabel, quotesValueLabel].forEach({
             $0?.numberOfLines = 0
+            $0?.textAlignment = .center
             $0?.font = UIFont(name: "GillSans", size: 16)
-            $0?.textColor = UIColor.black
         })
-        
-        imageView.layer.cornerRadius = 12.0
     }
     
     func configureNavigationBar() {
