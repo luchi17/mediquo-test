@@ -55,7 +55,7 @@ class CharacterListViewController: UIViewController {
         }
     }
     
-    func configureUI() {
+    private func configureUI() {
         
         self.contentView.backgroundColor = UIColor.systemTeal.withAlphaComponent(0.4)
         
@@ -98,7 +98,7 @@ class CharacterListViewController: UIViewController {
         collectionView.register(characterCollectionViewCellNib, forCellWithReuseIdentifier: characterCollectionViewCellIdentifier)
     }
     
-    @objc func segmentedControlValueChanged() {
+    @objc private func segmentedControlValueChanged() {
         self.updateItemsToShow()
     }
     
@@ -115,7 +115,7 @@ class CharacterListViewController: UIViewController {
         }
     }
     
-    func showErrorAlert(message: String? = nil) {
+    private func showErrorAlert(message: String? = nil) {
         let message = message == nil ? "Server error" : message
         let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
         let closeAction = UIAlertAction(title: "Close", style: .default, handler: { _ in
@@ -134,7 +134,7 @@ class CharacterListViewController: UIViewController {
         }
     }
     
-    @IBAction func changeLanguageButtonTouchUpInside(_ sender: UIButton) {
+    @IBAction private func changeLanguageButtonTouchUpInside(_ sender: UIButton) {
         
         if LocalStorage.language == AppLanguage.castellano {
             Locale.updateLanguage(AppLanguage.english)
@@ -169,7 +169,7 @@ class CharacterListViewController: UIViewController {
 
 extension CharacterListViewController: UICollectionViewDelegate {
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    private func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let characterItemModel = self.currentItemsToShow[indexPath.row]
         
@@ -183,7 +183,7 @@ extension CharacterListViewController: UICollectionViewDelegate {
 
 extension CharacterListViewController: UICollectionViewDataSource {
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    private func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let characterItem = self.currentItemsToShow[indexPath.row]
         
@@ -197,7 +197,7 @@ extension CharacterListViewController: UICollectionViewDataSource {
         return UICollectionViewCell()
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    private func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.currentItemsToShow.count
     }
 }
