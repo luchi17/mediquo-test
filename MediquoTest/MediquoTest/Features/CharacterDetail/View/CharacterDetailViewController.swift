@@ -65,11 +65,16 @@ class CharacterDetailViewController: UIViewController {
     
     private func setModel() {
         
-        nameLabel.text = ""
-        nickLabel.text = ""
-        ageLabel.text = ""
-        seasonsLabel.text = ""
-        quotesLabel.text = ""
+        nameLabel.text = Localization.CharacterDetail.name.uppercased()
+        nickLabel.text = Localization.CharacterDetail.nick.uppercased()
+        ageLabel.text = Localization.CharacterDetail.age.uppercased()
+        seasonsLabel.text = Localization.CharacterDetail.seasons.uppercased()
+        quotesLabel.text = Localization.CharacterDetail.quotes.uppercased()
+        
+        nameLabel.isHidden = model?.name == nil
+        nickLabel.isHidden = model?.nickname == nil
+        seasonsLabel.isHidden = model?.seasons == nil
+        quotesLabel.isHidden = model?.quotes == nil
         
         imageView.image = model?.image
         nameValueLabel.text = model?.name

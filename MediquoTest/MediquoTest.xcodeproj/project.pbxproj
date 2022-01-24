@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71B996FFF27D34AFEECA59D6 /* Pods_MediquoTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 046F5BF0823623C574471748 /* Pods_MediquoTest.framework */; };
 		BCCB00A6279AB98F00B1CB52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB00A5279AB98F00B1CB52 /* AppDelegate.swift */; };
 		BCCB00AD279AB98F00B1CB52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCCB00AB279AB98F00B1CB52 /* Main.storyboard */; };
-		BCCB00B0279AB98F00B1CB52 /* MediquoTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BCCB00AE279AB98F00B1CB52 /* MediquoTest.xcdatamodeld */; };
-		BCCB00B2279AB99400B1CB52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCCB00B1279AB99400B1CB52 /* Assets.xcassets */; };
 		BCCB00F9279AC13800B1CB52 /* CharacterListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB00EB279AC13800B1CB52 /* CharacterListDataSource.swift */; };
 		BCCB00FA279AC13800B1CB52 /* CharacterItemDataOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB00EC279AC13800B1CB52 /* CharacterItemDataOut.swift */; };
 		BCCB00FC279AC13800B1CB52 /* CharacterListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB00EF279AC13800B1CB52 /* CharacterListManager.swift */; };
@@ -25,20 +24,25 @@
 		BCCB0110279ADFE400B1CB52 /* CharacterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB010B279ADFE400B1CB52 /* CharacterCollectionViewCell.swift */; };
 		BCCB0111279ADFE400B1CB52 /* CharacterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCCB010C279ADFE400B1CB52 /* CharacterCollectionViewCell.xib */; };
 		BCCB0115279AE3EA00B1CB52 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCCB0114279AE3EA00B1CB52 /* SplashScreen.storyboard */; };
-		BCCB0117279B092800B1CB52 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB0116279B092800B1CB52 /* Utils.swift */; };
 		BCCB011C279B0E9700B1CB52 /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB011A279B0E9700B1CB52 /* CharacterDetailViewController.swift */; };
 		BCCB011D279B0E9700B1CB52 /* CharacterDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCCB011B279B0E9700B1CB52 /* CharacterDetailViewController.xib */; };
 		BCCB0128279C3A1900B1CB52 /* CharacterDetailDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB0121279C3A1900B1CB52 /* CharacterDetailDataSource.swift */; };
 		BCCB0129279C3A1900B1CB52 /* QuoteDataOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB0122279C3A1900B1CB52 /* QuoteDataOut.swift */; };
 		BCCB012C279C3A1900B1CB52 /* CharacterDetailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB0126279C3A1900B1CB52 /* CharacterDetailManager.swift */; };
+		BCCB0140279E9B2100B1CB52 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCCB012F279E9B2100B1CB52 /* Assets.xcassets */; };
+		BCCB0141279E9B2100B1CB52 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB0130279E9B2100B1CB52 /* Utils.swift */; };
+		BCCB0143279E9B2100B1CB52 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BCCB0133279E9B2100B1CB52 /* Localizable.strings */; };
+		BCCB0145279E9B2100B1CB52 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB0137279E9B2100B1CB52 /* Localization.swift */; };
+		BCCB0147279E9B2100B1CB52 /* structured-swift4.stencil in Resources */ = {isa = PBXBuildFile; fileRef = BCCB013F279E9B2100B1CB52 /* structured-swift4.stencil */; };
+		BCCB014B279E9E6000B1CB52 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB014A279E9E6000B1CB52 /* LocalStorage.swift */; };
+		BCCB014D279E9E8500B1CB52 /* AppLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB014C279E9E8500B1CB52 /* AppLanguage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		046F5BF0823623C574471748 /* Pods_MediquoTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MediquoTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCCB00A2279AB98F00B1CB52 /* MediquoTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediquoTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCCB00A5279AB98F00B1CB52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCCB00AC279AB98F00B1CB52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BCCB00AF279AB98F00B1CB52 /* MediquoTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MediquoTest.xcdatamodel; sourceTree = "<group>"; };
-		BCCB00B1279AB99400B1CB52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BCCB00B6279AB99400B1CB52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCCB00EB279AC13800B1CB52 /* CharacterListDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterListDataSource.swift; sourceTree = "<group>"; };
 		BCCB00EC279AC13800B1CB52 /* CharacterItemDataOut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterItemDataOut.swift; sourceTree = "<group>"; };
@@ -54,12 +58,21 @@
 		BCCB010B279ADFE400B1CB52 /* CharacterCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterCollectionViewCell.swift; sourceTree = "<group>"; };
 		BCCB010C279ADFE400B1CB52 /* CharacterCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CharacterCollectionViewCell.xib; sourceTree = "<group>"; };
 		BCCB0114279AE3EA00B1CB52 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
-		BCCB0116279B092800B1CB52 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		BCCB011A279B0E9700B1CB52 /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
 		BCCB011B279B0E9700B1CB52 /* CharacterDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CharacterDetailViewController.xib; sourceTree = "<group>"; };
 		BCCB0121279C3A1900B1CB52 /* CharacterDetailDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterDetailDataSource.swift; sourceTree = "<group>"; };
 		BCCB0122279C3A1900B1CB52 /* QuoteDataOut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteDataOut.swift; sourceTree = "<group>"; };
 		BCCB0126279C3A1900B1CB52 /* CharacterDetailManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterDetailManager.swift; sourceTree = "<group>"; };
+		BCCB012F279E9B2100B1CB52 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BCCB0130279E9B2100B1CB52 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		BCCB0137279E9B2100B1CB52 /* Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
+		BCCB013A279E9B2100B1CB52 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BCCB013F279E9B2100B1CB52 /* structured-swift4.stencil */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "structured-swift4.stencil"; sourceTree = "<group>"; };
+		BCCB0149279E9CAA00B1CB52 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BCCB014A279E9E6000B1CB52 /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
+		BCCB014C279E9E8500B1CB52 /* AppLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLanguage.swift; sourceTree = "<group>"; };
+		C8703BC0EBC0A1113DA52553 /* Pods-MediquoTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediquoTest.release.xcconfig"; path = "Target Support Files/Pods-MediquoTest/Pods-MediquoTest.release.xcconfig"; sourceTree = "<group>"; };
+		CF8429B6F5F176D77433F2A7 /* Pods-MediquoTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediquoTest.debug.xcconfig"; path = "Target Support Files/Pods-MediquoTest/Pods-MediquoTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,17 +80,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71B996FFF27D34AFEECA59D6 /* Pods_MediquoTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		63FF355EA9BC6528A0F484EA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				046F5BF0823623C574471748 /* Pods_MediquoTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		773CF8039BEAEF8CDAA2B1A7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CF8429B6F5F176D77433F2A7 /* Pods-MediquoTest.debug.xcconfig */,
+				C8703BC0EBC0A1113DA52553 /* Pods-MediquoTest.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		BCCB0099279AB98F00B1CB52 = {
 			isa = PBXGroup;
 			children = (
 				BCCB00A4279AB98F00B1CB52 /* MediquoTest */,
 				BCCB00A3279AB98F00B1CB52 /* Products */,
+				773CF8039BEAEF8CDAA2B1A7 /* Pods */,
+				63FF355EA9BC6528A0F484EA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,14 +125,12 @@
 		BCCB00A4279AB98F00B1CB52 /* MediquoTest */ = {
 			isa = PBXGroup;
 			children = (
-				BCCB0116279B092800B1CB52 /* Utils.swift */,
+				BCCB012E279E9B2100B1CB52 /* Resources */,
 				BCCB00FF279AD38700B1CB52 /* Network */,
 				BCCB00DD279AC10600B1CB52 /* Features */,
 				BCCB00A5279AB98F00B1CB52 /* AppDelegate.swift */,
 				BCCB00AB279AB98F00B1CB52 /* Main.storyboard */,
-				BCCB00B1279AB99400B1CB52 /* Assets.xcassets */,
 				BCCB00B6279AB99400B1CB52 /* Info.plist */,
-				BCCB00AE279AB98F00B1CB52 /* MediquoTest.xcdatamodeld */,
 			);
 			path = MediquoTest;
 			sourceTree = "<group>";
@@ -226,6 +257,28 @@
 			path = Domain;
 			sourceTree = "<group>";
 		};
+		BCCB012E279E9B2100B1CB52 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BCCB012F279E9B2100B1CB52 /* Assets.xcassets */,
+				BCCB0130279E9B2100B1CB52 /* Utils.swift */,
+				BCCB0132279E9B2100B1CB52 /* Localization */,
+				BCCB014A279E9E6000B1CB52 /* LocalStorage.swift */,
+				BCCB014C279E9E8500B1CB52 /* AppLanguage.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BCCB0132279E9B2100B1CB52 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				BCCB0133279E9B2100B1CB52 /* Localizable.strings */,
+				BCCB0137279E9B2100B1CB52 /* Localization.swift */,
+				BCCB013F279E9B2100B1CB52 /* structured-swift4.stencil */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -233,9 +286,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BCCB00B9279AB99400B1CB52 /* Build configuration list for PBXNativeTarget "MediquoTest" */;
 			buildPhases = (
+				E83496B3DDBDBA69730077B2 /* [CP] Check Pods Manifest.lock */,
 				BCCB009E279AB98F00B1CB52 /* Sources */,
 				BCCB009F279AB98F00B1CB52 /* Frameworks */,
 				BCCB00A0279AB98F00B1CB52 /* Resources */,
+				BCCB0148279E9C6B00B1CB52 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -268,6 +323,10 @@
 			knownRegions = (
 				en,
 				Base,
+				eu,
+				"ca-ES",
+				es,
+				gl,
 			);
 			mainGroup = BCCB0099279AB98F00B1CB52;
 			productRefGroup = BCCB00A3279AB98F00B1CB52 /* Products */;
@@ -286,38 +345,84 @@
 			files = (
 				BCCB0115279AE3EA00B1CB52 /* SplashScreen.storyboard in Resources */,
 				BCCB0111279ADFE400B1CB52 /* CharacterCollectionViewCell.xib in Resources */,
-				BCCB00B2279AB99400B1CB52 /* Assets.xcassets in Resources */,
+				BCCB0147279E9B2100B1CB52 /* structured-swift4.stencil in Resources */,
 				BCCB011D279B0E9700B1CB52 /* CharacterDetailViewController.xib in Resources */,
 				BCCB010E279ADFE400B1CB52 /* CharacterListViewController.xib in Resources */,
+				BCCB0143279E9B2100B1CB52 /* Localizable.strings in Resources */,
+				BCCB0140279E9B2100B1CB52 /* Assets.xcassets in Resources */,
 				BCCB00AD279AB98F00B1CB52 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		BCCB0148279E9C6B00B1CB52 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nswiftgen\n";
+		};
+		E83496B3DDBDBA69730077B2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MediquoTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BCCB009E279AB98F00B1CB52 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCCB0145279E9B2100B1CB52 /* Localization.swift in Sources */,
 				BCCB0105279AD64100B1CB52 /* RequestEncoding.swift in Sources */,
 				BCCB00FA279AC13800B1CB52 /* CharacterItemDataOut.swift in Sources */,
 				BCCB010F279ADFE400B1CB52 /* CharacterListViewController.swift in Sources */,
-				BCCB00B0279AB98F00B1CB52 /* MediquoTest.xcdatamodeld in Sources */,
 				BCCB00A6279AB98F00B1CB52 /* AppDelegate.swift in Sources */,
-				BCCB0117279B092800B1CB52 /* Utils.swift in Sources */,
 				BCCB0101279AD39B00B1CB52 /* EndpointRepositoryKeys.swift in Sources */,
 				BCCB00FC279AC13800B1CB52 /* CharacterListManager.swift in Sources */,
 				BCCB012C279C3A1900B1CB52 /* CharacterDetailManager.swift in Sources */,
 				BCCB00FE279AC13800B1CB52 /* CharacterListModel.swift in Sources */,
 				BCCB010D279ADFE400B1CB52 /* CharacterListViewModel.swift in Sources */,
 				BCCB00F9279AC13800B1CB52 /* CharacterListDataSource.swift in Sources */,
+				BCCB0141279E9B2100B1CB52 /* Utils.swift in Sources */,
 				BCCB0103279AD53200B1CB52 /* NetworkManager.swift in Sources */,
 				BCCB0128279C3A1900B1CB52 /* CharacterDetailDataSource.swift in Sources */,
 				BCCB0110279ADFE400B1CB52 /* CharacterCollectionViewCell.swift in Sources */,
 				BCCB00FD279AC13800B1CB52 /* CharacterItemModel.swift in Sources */,
 				BCCB011C279B0E9700B1CB52 /* CharacterDetailViewController.swift in Sources */,
+				BCCB014D279E9E8500B1CB52 /* AppLanguage.swift in Sources */,
 				BCCB0129279C3A1900B1CB52 /* QuoteDataOut.swift in Sources */,
+				BCCB014B279E9E6000B1CB52 /* LocalStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +435,15 @@
 				BCCB00AC279AB98F00B1CB52 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BCCB0133279E9B2100B1CB52 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BCCB013A279E9B2100B1CB52 /* es */,
+				BCCB0149279E9CAA00B1CB52 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -453,6 +567,7 @@
 		};
 		BCCB00BA279AB99400B1CB52 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF8429B6F5F176D77433F2A7 /* Pods-MediquoTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -481,6 +596,7 @@
 		};
 		BCCB00BB279AB99400B1CB52 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8703BC0EBC0A1113DA52553 /* Pods-MediquoTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -529,19 +645,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		BCCB00AE279AB98F00B1CB52 /* MediquoTest.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				BCCB00AF279AB98F00B1CB52 /* MediquoTest.xcdatamodel */,
-			);
-			currentVersion = BCCB00AF279AB98F00B1CB52 /* MediquoTest.xcdatamodel */;
-			path = MediquoTest.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = BCCB009A279AB98F00B1CB52 /* Project object */;
 }

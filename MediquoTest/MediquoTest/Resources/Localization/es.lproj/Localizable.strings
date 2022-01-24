@@ -1,0 +1,16 @@
+//
+//  CharacterListManager.swift
+//  MediquoTest
+//
+//  Created by Mariluz Parejo on 24/01/21.
+//
+
+"language.english" = "English";
+
+"characterDetail.name" = "Nombre";
+"characterDetail.nick" = "Apodo";
+"characterDetail.age" = "Edad";
+"characterDetail.ageUnknown" = "Desconocida";
+"characterDetail.seasons" = "Temporadas en las que aparece";
+"characterDetail.season" = "Temporada ";
+"characterDetail.quotes" = "Sus frases conocidas";

@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
+        LocalStorage.registerDefaultLanguage()
+        
         self.showInitialViewController()
         
         return true

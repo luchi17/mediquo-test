@@ -81,7 +81,8 @@ class CharacterListManager: NSObject, CharacterListManagerProtocol {
     private func setUpSeasons(seasons: [Int]) -> String {
         var seasonsString: String = ""
         for season in seasons {
-            seasonsString = "Season: " + String(season) + "\n"
+            
+            seasonsString = Localization.CharacterDetail.season + String(season) + "\n"
         }
         return seasonsString
     }

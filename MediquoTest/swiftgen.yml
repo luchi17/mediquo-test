@@ -1,0 +1,9 @@
+strings:
+  inputs: ./MediquoTest/Resources/Localization/es.lproj/Localizable.strings
+  outputs:
+    - templatePath: ./MediquoTest/Resources/Localization/structured-swift4.stencil
+      output: ./MediquoTest/Resources/Localization/Localization.swift
+      params:
+        enumName: Localization
+        language: LocalStorage.language.rawValue
+        localizeFunction: true

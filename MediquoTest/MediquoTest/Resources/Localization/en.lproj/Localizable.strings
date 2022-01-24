@@ -1,0 +1,16 @@
+//
+//  CharacterListManager.swift
+//  MediquoTest
+//
+//  Created by Mariluz Parejo on 24/01/21.
+//
+
+"language.spanish" = "Español";
+
+"characterDetail.name" = "Name";
+"characterDetail.nick" = "Nickname";
+"characterDetail.age" = "Age";
+"characterDetail.ageUnknown" = "Unknown";
+"characterDetail.seasons" = "Appearance seasons";
+"characterDetail.season" = "Season ";
+"characterDetail.quotes" = "Common quotes";
