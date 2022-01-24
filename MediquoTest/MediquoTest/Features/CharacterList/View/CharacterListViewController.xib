@@ -14,6 +14,7 @@
                 <outlet property="collectionView" destination="eux-Y5-6Fa" id="FJs-LQ-jyq"/>
                 <outlet property="contentView" destination="U4l-vL-Ujf" id="tq4-Br-J9x"/>
                 <outlet property="segmentedControl" destination="MQt-Uk-AJU" id="NJn-oZ-Ajj"/>
+                <outlet property="spinner" destination="07I-Pl-J0y" id="He0-sZ-Z1Q"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -57,9 +58,13 @@
                             </segments>
                             <color key="selectedSegmentTintColor" systemColor="systemTealColor"/>
                         </segmentedControl>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="07I-Pl-J0y">
+                            <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                        </activityIndicatorView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="07I-Pl-J0y" firstAttribute="centerX" secondItem="U4l-vL-Ujf" secondAttribute="centerX" id="Bzt-gh-vCp"/>
                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="MQt-Uk-AJU" secondAttribute="trailing" constant="16" id="CmI-MT-f1m"/>
                         <constraint firstItem="7wm-gW-xAa" firstAttribute="trailing" secondItem="eux-Y5-6Fa" secondAttribute="trailing" id="DZZ-vQ-coc"/>
                         <constraint firstItem="7wm-gW-xAa" firstAttribute="bottom" secondItem="MQt-Uk-AJU" secondAttribute="top" constant="-10" id="DdY-sw-6Qt"/>
@@ -69,6 +74,7 @@
                         <constraint firstItem="eux-Y5-6Fa" firstAttribute="leading" secondItem="U4l-vL-Ujf" secondAttribute="leading" id="UMu-Tt-7de"/>
                         <constraint firstItem="7wm-gW-xAa" firstAttribute="top" secondItem="U4l-vL-Ujf" secondAttribute="top" constant="40" id="f6T-AS-e2G"/>
                         <constraint firstItem="eux-Y5-6Fa" firstAttribute="top" secondItem="MQt-Uk-AJU" secondAttribute="bottom" constant="40" id="mhz-UG-hMp"/>
+                        <constraint firstItem="07I-Pl-J0y" firstAttribute="centerY" secondItem="U4l-vL-Ujf" secondAttribute="centerY" id="x2Q-vc-mwu"/>
                         <constraint firstAttribute="bottom" secondItem="eux-Y5-6Fa" secondAttribute="bottom" id="zbj-Qo-X53"/>
                     </constraints>
                 </view>

@@ -13,6 +13,8 @@ class CharacterListViewController: UIViewController {
     @IBOutlet private weak var collectionView: UICollectionView!
     @IBOutlet private weak var changeLanguageButton: UIButton!
     @IBOutlet private weak var segmentedControl: UISegmentedControl!
+    @IBOutlet private weak var spinner: UIActivityIndicatorView!
+
     
     private var viewModel: CharacterListInterfaceToViewModelProtocol = CharacterListViewModel(characterListManager: CharacterListManager(dataSource: CharacterListDataSource()))
     
@@ -30,10 +32,13 @@ class CharacterListViewController: UIViewController {
         
         configureUI()
         
+        self.startSpinner()
         viewModel.loadCharacterList()
         
         viewModel.bindCharacterListModel = { list in
             
+            self.stopSpinner()
+
             guard let list = list else {
                 self.showErrorAlert()
                 return }
@@ -44,6 +49,8 @@ class CharacterListViewController: UIViewController {
         }
         
         viewModel.bindServiceError = { error in
+        
+            self.stopSpinner()
             self.showErrorAlert(message: error.localizedDescription)
         }
     }
@@ -115,6 +122,7 @@ class CharacterListViewController: UIViewController {
         })
         let retryAction = UIAlertAction(title: "Retry", style: .default, handler: { _ in
             alert.dismiss(animated: false, completion: {
+                self.startSpinner()
                 self.viewModel.loadCharacterList()
             })
         })
@@ -135,6 +143,21 @@ class CharacterListViewController: UIViewController {
             changeLanguageButton.setTitle(Localization.Language.english, for: .normal)
         }
     }
+    
+    private func startSpinner() {
+       DispatchQueue.main.async {
+        self.spinner.isHidden = false
+        self.spinner.startAnimating()
+       }
+    }
+    
+    private func stopSpinner() {
+        DispatchQueue.main.async {
+            self.spinner.isHidden = true
+            self.spinner.stopAnimating()
+        }
+    }
+
 }
 
 extension CharacterListViewController: UICollectionViewDelegate {
