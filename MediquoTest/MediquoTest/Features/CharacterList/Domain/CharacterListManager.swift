@@ -61,7 +61,7 @@ class CharacterListManager: NSObject, CharacterListManagerProtocol {
                                                            image: Utils.getImage(from: itemDataOut.img),
                                                            age: Utils.getAgeFromBirthDate(dateString: itemDataOut.birthday),
                                                            nickname: itemDataOut.nickname,
-                                                           series: Series.betterCallSaul.rawValue,
+                                                           series: series,
                                                            seasons: self.setUpSeasons(seasons: itemDataOut.appearance))
                    
                     characterItems.append(characterItem)
@@ -82,7 +82,7 @@ class CharacterListManager: NSObject, CharacterListManagerProtocol {
         var seasonsString: String = ""
         for season in seasons {
             
-            seasonsString = Localization.CharacterDetail.season + String(season) + "\n"
+            seasonsString = seasonsString + Localization.CharacterDetail.season + String(season) + "\n"
         }
         return seasonsString
     }
@@ -93,6 +93,6 @@ protocol CharacterListManagerProtocol {
 }
 
 enum Series: String {
-    case breakingBad = "Better Call Saul"
-    case betterCallSaul = "Breaking Bad"
+    case breakingBad = "Breaking Bad"
+    case betterCallSaul = "Better Call Saul"
 }
