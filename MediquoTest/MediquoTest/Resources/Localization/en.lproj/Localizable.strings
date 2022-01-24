@@ -11,6 +11,10 @@
 "characterList.breakingBad" = "Breaking Bad";
 "characterList.betterCallSaul" = "Better Call Saul";
 "characterList.errorMessage" = "Image could not be loaded";
+"characterList.serverError" = "Server error";
+"characterList.error" = "Error";
+"characterList.close" = "Close";
+"characterList.retry" = "Retry";
 
 "characterDetail.name" = "Name";
 "characterDetail.nick" = "Nickname";

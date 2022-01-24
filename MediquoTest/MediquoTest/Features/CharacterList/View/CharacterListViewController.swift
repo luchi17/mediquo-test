@@ -81,7 +81,7 @@ class CharacterListViewController: UIViewController {
         
         let itemWidth: CGFloat = view.frame.width * 0.40
         let collectionViewLayout = UICollectionViewFlowLayout()
-        collectionViewLayout.itemSize = CGSize(width: itemWidth, height: 200.0)
+        collectionViewLayout.itemSize = CGSize(width: itemWidth, height: 220.0)
         collectionViewLayout.minimumLineSpacing = 15
         collectionViewLayout.sectionInset = UIEdgeInsets(top: 15.0, left: 15.0, bottom: 15.0, right: 15.0)
         collectionViewLayout.scrollDirection = .vertical
@@ -116,12 +116,12 @@ class CharacterListViewController: UIViewController {
     }
     
     private func showErrorAlert(message: String? = nil) {
-        let message = message == nil ? "Server error" : message
-        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-        let closeAction = UIAlertAction(title: "Close", style: .default, handler: { _ in
+        let message = message == nil ? Localization.CharacterList.serverError : message
+        let alert = UIAlertController(title: Localization.CharacterList.error, message: message, preferredStyle: .alert)
+        let closeAction = UIAlertAction(title: Localization.CharacterList.close, style: .default, handler: { _ in
             alert.dismiss(animated: false, completion: nil)
         })
-        let retryAction = UIAlertAction(title: "Retry", style: .default, handler: { _ in
+        let retryAction = UIAlertAction(title: Localization.CharacterList.retry, style: .default, handler: { _ in
             alert.dismiss(animated: false, completion: {
                 self.startSpinner()
                 self.viewModel.loadCharacterList()

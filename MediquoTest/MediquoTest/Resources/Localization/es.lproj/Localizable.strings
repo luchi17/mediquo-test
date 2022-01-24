@@ -11,6 +11,10 @@
 "characterList.breakingBad" = "Breaking Bad";
 "characterList.betterCallSaul" = "Better Call Saul";
 "characterList.errorMessage" = "La imagen no se ha cargado";
+"characterList.serverError" = "Error del servidor";
+"characterList.error" = "Error";
+"characterList.close" = "Cerrar";
+"characterList.retry" = "Reintentar";
 
 "characterDetail.name" = "Nombre";
 "characterDetail.nick" = "Apodo";
