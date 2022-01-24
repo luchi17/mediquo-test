@@ -6,6 +6,10 @@
 //
 
 "language.spanish" = "Español";
+"language.english" = "English";
+
+"characterList.breakingBad" = "Breaking Bad";
+"characterList.betterCallSaul" = "Better Call Saul";
 
 "characterDetail.name" = "Name";
 "characterDetail.nick" = "Nickname";

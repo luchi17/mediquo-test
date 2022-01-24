@@ -11,7 +11,7 @@ class CharacterListViewController: UIViewController {
     
     @IBOutlet private weak var contentView: UIView!
     @IBOutlet private weak var collectionView: UICollectionView!
-    @IBOutlet private weak var updateListButton: UIButton!
+    @IBOutlet private weak var changeLanguageButton: UIButton!
     @IBOutlet private weak var segmentedControl: UISegmentedControl!
     
     private var viewModel: CharacterListInterfaceToViewModelProtocol = CharacterListViewModel(characterListManager: CharacterListManager(dataSource: CharacterListDataSource()))
@@ -52,15 +52,15 @@ class CharacterListViewController: UIViewController {
         
         self.contentView.backgroundColor = UIColor.systemTeal.withAlphaComponent(0.4)
         
-        updateListButton.setTitle("Update", for: .normal)
-        updateListButton.setTitleColor(.purple, for: .normal)
+        changeLanguageButton.setTitle(Localization.Language.english, for: .normal)
+        changeLanguageButton.setTitleColor(.systemTeal, for: .normal)
         
         segmentedControl.tintColor = UIColor.systemTeal
         segmentedControl.addTarget(self, action: #selector(segmentedControlValueChanged), for: .valueChanged)
         segmentedControl.selectedSegmentTintColor = UIColor.systemTeal
         segmentedControl.backgroundColor = UIColor.gray
-        segmentedControl.setTitle("Breaking Bad", forSegmentAt: 0)
-        segmentedControl.setTitle("Better Call Saul", forSegmentAt: 1)
+        segmentedControl.setTitle(Localization.CharacterList.breakingBad, forSegmentAt: 0)
+        segmentedControl.setTitle(Localization.CharacterList.betterCallSaul, forSegmentAt: 1)
         
         if let font = UIFont(name: "GillSans-Bold", size: 16) {
             segmentedControl.setTitleTextAttributes([.foregroundColor : UIColor.white,
@@ -125,11 +125,16 @@ class CharacterListViewController: UIViewController {
         }
     }
     
-    @IBAction func updateListButtonTouchUpInside(_ sender: UIButton) {
+    @IBAction func changeLanguageButtonTouchUpInside(_ sender: UIButton) {
         
+        if LocalStorage.language == AppLanguage.castellano {
+            Locale.updateLanguage(AppLanguage.english)
+            changeLanguageButton.setTitle(Localization.Language.spanish, for: .normal)
+        } else if LocalStorage.language == AppLanguage.english {
+            Locale.updateLanguage(AppLanguage.castellano)
+            changeLanguageButton.setTitle(Localization.Language.english, for: .normal)
+        }
     }
-    
-    
 }
 
 extension CharacterListViewController: UICollectionViewDelegate {
