@@ -61,6 +61,7 @@ class CharacterListViewController: UIViewController {
         
         changeLanguageButton.setTitle(Localization.Language.english, for: .normal)
         changeLanguageButton.setTitleColor(.systemTeal, for: .normal)
+        self.updateChangeLanguageTitle(Localization.Language.english)
         
         segmentedControl.tintColor = UIColor.systemTeal
         segmentedControl.addTarget(self, action: #selector(segmentedControlValueChanged), for: .valueChanged)
@@ -137,11 +138,17 @@ class CharacterListViewController: UIViewController {
         
         if LocalStorage.language == AppLanguage.castellano {
             Locale.updateLanguage(AppLanguage.english)
-            changeLanguageButton.setTitle(Localization.Language.spanish, for: .normal)
+            self.updateChangeLanguageTitle(Localization.Language.spanish)
         } else if LocalStorage.language == AppLanguage.english {
             Locale.updateLanguage(AppLanguage.castellano)
-            changeLanguageButton.setTitle(Localization.Language.english, for: .normal)
+            self.updateChangeLanguageTitle(Localization.Language.english)
         }
+    }
+    
+    private func updateChangeLanguageTitle(_ title: String) {
+        let attributedString = NSAttributedString(string: title, attributes: [.foregroundColor : UIColor.systemTeal,
+                                                                       .font : UIFont(name: "GillSans-Bold", size: 16)])
+        changeLanguageButton.setAttributedTitle(attributedString, for: .normal)
     }
     
     private func startSpinner() {

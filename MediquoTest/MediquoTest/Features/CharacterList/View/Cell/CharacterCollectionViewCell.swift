@@ -17,7 +17,7 @@ class CharacterCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-       configureUI()
+        configureUI()
     }
     
     func configureUI() {
@@ -33,11 +33,13 @@ class CharacterCollectionViewCell: UICollectionViewCell {
         titleLabel.textAlignment = .center
         
         nickNameLabel.textAlignment = .center
+        nickNameLabel.font = UIFont(name: "GillSans", size: 14)
         
         errorLabel.font = UIFont(name: "GillSans-Bold", size: 14)
         errorLabel.textAlignment = .center
         errorLabel.numberOfLines = 0
         errorLabel.textColor = .red
+        errorLabel.text = Localization.CharacterList.errorMessage
     }
     
     func configureCell(model: CharacterItemModel) {
@@ -45,14 +47,6 @@ class CharacterCollectionViewCell: UICollectionViewCell {
         titleLabel.text = model.name
         nickNameLabel.text = model.nickname
         imageView.image = model.image
-        
-        if model.image != nil {
-            imageView.image = model.image
-            errorLabel.isHidden = true
-        } else {
-            errorLabel.text = "Image could not be loaded"
-            errorLabel.isHidden = false
-        }
-        
+        errorLabel.isHidden = model.image != nil
     }
 }
