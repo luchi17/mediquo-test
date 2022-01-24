@@ -14,13 +14,19 @@ class CharacterListViewController: UIViewController {
     @IBOutlet private weak var changeLanguageButton: UIButton!
     @IBOutlet private weak var segmentedControl: UISegmentedControl!
     @IBOutlet private weak var spinner: UIActivityIndicatorView!
-
+    @IBOutlet private weak var textfield: UITextField!
+    @IBOutlet private weak var searchButton: UIButton!
+    @IBOutlet private weak var clearButton: UIButton!
     
     private var viewModel: CharacterListInterfaceToViewModelProtocol = CharacterListViewModel(characterListManager: CharacterListManager(dataSource: CharacterListDataSource()))
     
     private var characterListModel: CharacterListModel = CharacterListModel()
     
     private var currentItemsToShow: [CharacterItemModel] = []
+    
+    private var nameFilter: String? {
+        return textfield.text
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -103,13 +109,21 @@ class CharacterListViewController: UIViewController {
     }
     
     private func updateItemsToShow() {
-        
+
         DispatchQueue.main.async {
+            
             if self.segmentedControl.selectedSegmentIndex == 0 {
                 self.currentItemsToShow = self.characterListModel.breakingBadCharacters ?? []
                 
             } else {
                 self.currentItemsToShow = self.characterListModel.betterCallSaulCharacters ?? []
+            }
+            
+            if let nameFilter = self.nameFilter, !nameFilter.isEmpty {
+                self.currentItemsToShow = self.currentItemsToShow.filter({
+                    $0.name.lowercased().contains(nameFilter) ||
+                    $0.nickname.lowercased().contains(nameFilter)
+                })
             }
             self.collectionView.reloadData()
         }
@@ -145,7 +159,17 @@ class CharacterListViewController: UIViewController {
         }
     }
     
+    @IBAction private func searchButtonTouchUpInside(_ sender: UIButton) {
+        self.updateItemsToShow()
+    }
+    
+    @IBAction private func clearButtonTouchUpInside(_ sender: UIButton) {
+        textfield.text = ""
+        self.updateItemsToShow()
+    }
+
     private func updateChangeLanguageTitle(_ title: String) {
+        
         let attributedString = NSAttributedString(string: title, attributes: [.foregroundColor : UIColor.systemTeal,
                                                                        .font : UIFont(name: "GillSans-Bold", size: 16)])
         changeLanguageButton.setAttributedTitle(attributedString, for: .normal)
@@ -164,7 +188,6 @@ class CharacterListViewController: UIViewController {
             self.spinner.stopAnimating()
         }
     }
-
 }
 
 extension CharacterListViewController: UICollectionViewDelegate {

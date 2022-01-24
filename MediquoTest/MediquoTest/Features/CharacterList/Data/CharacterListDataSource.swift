@@ -26,18 +26,12 @@ class CharacterListDataSource : NSObject, CharacterListDataSourceProtocol {
                                      onSuccess: onSuccess,
                                      onError: onError)
     }
-
-    func getCharacterByName(name: String, onSuccess: @escaping ([CharacterItemDataOut]?) -> (), onError: @escaping (Error?) -> ()) {
-        
-    }
-    
     
 }
 
 protocol CharacterListDataSourceProtocol {
     
     func getCharactersListData(onSuccess: @escaping ([CharacterItemDataOut]?) -> (), onError: @escaping (Error?) -> ())
-    func getCharacterByName(name: String, onSuccess: @escaping ([CharacterItemDataOut]?) -> (), onError: @escaping (Error?) -> ())
     func getCharactersListBySeries(name: String, onSuccess: @escaping ([CharacterItemDataOut]?) -> (), onError: @escaping (Error?) -> ())
     
 }
