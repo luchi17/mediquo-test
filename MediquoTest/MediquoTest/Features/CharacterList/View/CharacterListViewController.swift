@@ -169,7 +169,7 @@ class CharacterListViewController: UIViewController {
 
 extension CharacterListViewController: UICollectionViewDelegate {
     
-    private func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let characterItemModel = self.currentItemsToShow[indexPath.row]
         
@@ -183,7 +183,7 @@ extension CharacterListViewController: UICollectionViewDelegate {
 
 extension CharacterListViewController: UICollectionViewDataSource {
     
-    private func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let characterItem = self.currentItemsToShow[indexPath.row]
         
@@ -197,7 +197,7 @@ extension CharacterListViewController: UICollectionViewDataSource {
         return UICollectionViewCell()
     }
     
-    private func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.currentItemsToShow.count
     }
 }
