@@ -24,7 +24,7 @@ class CharacterDetailViewController: UIViewController {
     @IBOutlet private weak var quotesLabel: UILabel!
     @IBOutlet private weak var quotesValueLabel: UILabel!
     
-    @IBOutlet private weak var descriptionTitleLabel: UILabel!
+    @IBOutlet private weak var stackView: UIStackView!
     
     var model: CharacterItemModel?
     
@@ -36,11 +36,7 @@ class CharacterDetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
-        self.navigationController?.navigationItem.backButtonTitle = ""
-        self.navigationController?.navigationBar.backgroundColor = .clear
-        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white]
-        self.navigationController?.navigationBar.barTintColor = .clear // change the navigation background color
+        self.configureNavigationBar()
     }
     
     func configureUI() {
@@ -59,8 +55,27 @@ class CharacterDetailViewController: UIViewController {
             $0?.textColor = UIColor.black
         })
         
-        descriptionTitleLabel.font = UIFont(name: "GillSans", size: 18)
         imageView.layer.cornerRadius = 12.0
+    }
+    
+    func configureNavigationBar() {
+        
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        self.navigationController?.navigationItem.backButtonTitle = ""
+
+        let titleAttributes: [NSAttributedString.Key : Any] = [.foregroundColor: UIColor.systemTeal,
+                                                               .font: UIFont(name: "GillSans", size: 18)]
+
+        if #available(iOS 13.0, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.titleTextAttributes = titleAttributes
+            appearance.largeTitleTextAttributes = titleAttributes
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = .white
+            
+            self.navigationController?.navigationBar.standardAppearance = appearance
+            self.navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        }
     }
     
     private func setModel() {
