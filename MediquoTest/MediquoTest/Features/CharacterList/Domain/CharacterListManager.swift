@@ -6,36 +6,29 @@
 //
 
 import UIKit
+import RealmSwift
 
 class CharacterListManager: NSObject, CharacterListManagerProtocol {
     
     private var dataSource: CharacterListDataSourceProtocol
+    
     init(dataSource: CharacterListDataSourceProtocol) {
         self.dataSource = dataSource
     }
-    
+
     func getCharacterListData(onSuccess: @escaping (CharacterListModel) -> (), onError: @escaping (Error?) -> ()) {
         
         var charactersListModel = CharacterListModel()
         
-        self.getCharacters(by: Series.betterCallSaul.rawValue) { betterCallSaulCharactersDataOut in
-
-            self.getCharacters(by: Series.breakingBad.rawValue) { breakingBadCharactersDataOut in
-                
-                var breakingBadCharacters: [CharacterItemModel] = []
-                var betterCallSaulCharacters: [CharacterItemModel] = []
-                
-                for character in breakingBadCharactersDataOut {
-                    breakingBadCharacters.append(character)
-                }
-                for character in betterCallSaulCharactersDataOut {
-                    betterCallSaulCharacters.append(character)
-                }
+        self.getCharacters(by: Series.betterCallSaul.rawValue) { betterCallSaulCharacters in
+            
+            self.getCharacters(by: Series.breakingBad.rawValue) { breakingBadCharacters in
                 
                 charactersListModel.breakingBadCharacters = breakingBadCharacters
                 charactersListModel.betterCallSaulCharacters = betterCallSaulCharacters
-                
+
                 onSuccess(charactersListModel)
+                return
                 
             } onError: { error in
                 onError(nil)
@@ -48,6 +41,18 @@ class CharacterListManager: NSObject, CharacterListManagerProtocol {
     
     private func getCharacters(by series: String, onSuccess: @escaping ([CharacterItemModel]) -> (), onError: @escaping (Error?) -> ()) {
         
+        var predicate: (CharacterItemModel) throws -> Bool
+        predicate = { item in
+            item.series == series
+        }
+        
+        let characters = RealmManager.shared.read(fromEntity: CharacterItemModel.self, predicate: predicate)
+        
+        if !characters.isEmpty {
+            onSuccess(characters)
+            return
+        }
+       
         self.dataSource.getCharactersListBySeries(name: series) { itemsList in
             
             if let itemsList = itemsList {
@@ -56,25 +61,30 @@ class CharacterListManager: NSObject, CharacterListManagerProtocol {
             
                 for itemDataOut in itemsList {
                     
-                    let characterItem = CharacterItemModel(id: itemDataOut.char_id,
-                                                           name: itemDataOut.name,
-                                                           image: Utils.getImage(from: itemDataOut.img),
-                                                           age: Utils.getAgeFromBirthDate(dateString: itemDataOut.birthday),
-                                                           nickname: itemDataOut.nickname,
-                                                           series: series,
-                                                           seasons: self.setUpSeasons(seasons: itemDataOut.appearance))
+                    let characterItem = CharacterItemModel()
+                    characterItem.setUpPrimaryKey(id: itemDataOut.char_id,
+                                                  series: series)
+                    characterItem.name = itemDataOut.name
+                    characterItem.imageData = Utils.getImageData(from: itemDataOut.img)
+                    characterItem.age = Utils.getAgeFromBirthDate(dateString: itemDataOut.birthday)
+                    characterItem.nickname = itemDataOut.nickname
+                    characterItem.seasons = self.setUpSeasons(seasons: itemDataOut.appearance)
                    
                     characterItems.append(characterItem)
                 }
-            
+                
+                RealmManager.shared.add(characterItems)
                 onSuccess(characterItems)
+                return
                 
             } else {
                 onError(nil)
+                return
             }
             
         } onError: { error in
             onError(error)
+            return
         }
     }
     
