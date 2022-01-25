@@ -10,102 +10,97 @@ import RealmSwift
 
 class RealmManager: RealmOperations {
     
-    private var realm: Realm!
-    
     private let schemaVersion: UInt64 = 4
     
     static var shared = RealmManager()
     
     init() {
-        realm = try! Realm()
     }
     
-    func add<T: Object>(_ object: T) {
+    private func realmInstance() -> Realm {
         
-        DispatchQueue.main.async {
-            if self.realm.isInWriteTransaction {
-                return
-            } else {
-                do {
-                    try self.realm.write({
-                        self.realm.add(object, update: .modified)
-                    })
-                } catch {
+        do {
+            let newRealm = try Realm()
+            return newRealm
+            
+        } catch {
+            print(error)
+            fatalError("Unable to create an instance of Realm")
+        }
+    }
+    
+    
+    func write<T: Object>(_ object: T? = nil, completion: @escaping ((Realm, T?) -> Void)) {
+        
+        DispatchQueue.main.sync {
+            autoreleasepool {
+                let currentRealm = realmInstance()
+                if currentRealm.isInWriteTransaction {
                     return
+                } else {
+                    do {
+                        try currentRealm.write {
+                            completion(currentRealm, object)
+                        }
+                    } catch {
+                        return
+                    }
                 }
             }
         }
     }
     
+    func add<T: Object>(_ object: T) {
+        self.write { (realmInstance, _) in
+            realmInstance.add(object, update: .all)
+        }
+    }
+    
     func add<S: Sequence>(_ objects: S) where S.Iterator.Element: Object {
-        DispatchQueue.main.async {
-            if self.realm.isInWriteTransaction {
-                return
-            } else {
-                do {
-                    try self.realm.write({
-                        self.realm.add(objects, update: .all)
-                    })
-                } catch {
-                    return
-                }
-            }
+        self.write { (realmInstance, _) in
+            realmInstance.add(objects, update: .all)
         }
     }
     
     
     func read<T: Object>(fromEntity entity: T.Type) -> [T] {
-        
-        let results: Results<T> = realm.objects(entity)
+        let results: Results<T> = self.realmInstance().objects(entity)
         return Array(results)
     }
     
     func read<T: Object>(fromEntity entity: T.Type, predicate:  ((T) throws -> Bool)) -> [T] {
-        
-        var results: [T] = []
-        results = try! self.realm.objects(entity).filter(predicate)
-        return results
+        let objects = try! realmInstance().objects(entity).filter(predicate)
+        return objects
     }
     
     func delete(_ object: Object) {
-        do {
-            try realm.write({
-                realm.delete(object)
-            })
-        } catch {
-            return
+        self.write(object) { (realmInstance, newObject) in
+            guard let newObject = newObject, !newObject.isInvalidated else {
+                return
+            }
+            realmInstance.delete(newObject)
         }
     }
     
     func cleanDatabase() {
-        
-        do {
-            try realm.write({
-                realm.deleteAll()
-            })
-        } catch {
-            return
+        self.write() { (realmInstance, newObject) in
+            guard let newObject = newObject, !newObject.isInvalidated else {
+                return
+            }
+            realmInstance.deleteAll()
         }
     }
     
-    func update<T: Object>(_ object: T, predicate: ((T) throws -> Bool)?) {
-        
-        var objects = self.read(fromEntity: T.self)
-        
-        guard let predicate = predicate else { return }
-        
-        do {
-            
-            objects = try objects.filter(predicate)
-            
-            try realm.write({
-                if var first = objects.first {
-                    first = object
-                    realm.add(first, update: .modified)
-                }
-            })
-        } catch {
+    func update<T: Object>(_ object: T, completion: @escaping ((T) -> Void)) {
+        guard !object.isInvalidated else {
             return
+        }
+        
+        self.write(object) { (realmInstance, newObject) in
+            guard let newObject = newObject, !newObject.isInvalidated else {
+                return
+            }
+            completion(newObject)
         }
     }
 }
@@ -119,11 +114,11 @@ protocol RealmOperations {
     
     func read<T: Object>(fromEntity entity: T.Type) -> [T]
     
-    func read<T: Object>(fromEntity entity: T.Type, predicate: @escaping ((T) throws -> Bool)) -> [T] 
+    func read<T: Object>(fromEntity entity: T.Type, predicate: @escaping ((T) throws -> Bool)) -> [T]
     
     func delete(_ object: Object)
     
     func cleanDatabase()
     
-    func update<T: Object>(_ object: T, predicate: ((T) throws -> Bool)?)
+    func update<T: Object>(_ object: T, completion: @escaping ((T) -> Void))
 }
