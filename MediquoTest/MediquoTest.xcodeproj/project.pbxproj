@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		71B996FFF27D34AFEECA59D6 /* Pods_MediquoTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 046F5BF0823623C574471748 /* Pods_MediquoTest.framework */; };
+		BC82C8F0279FF20700151D42 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC82C8EF279FF20700151D42 /* RealmManager.swift */; };
+		BC82C8F427A02E1000151D42 /* ObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC82C8F327A02E1000151D42 /* ObservableObject.swift */; };
 		BCCB00A6279AB98F00B1CB52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB00A5279AB98F00B1CB52 /* AppDelegate.swift */; };
 		BCCB00AD279AB98F00B1CB52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCCB00AB279AB98F00B1CB52 /* Main.storyboard */; };
 		BCCB00F9279AC13800B1CB52 /* CharacterListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB00EB279AC13800B1CB52 /* CharacterListDataSource.swift */; };
@@ -43,6 +45,8 @@
 
 /* Begin PBXFileReference section */
 		046F5BF0823623C574471748 /* Pods_MediquoTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MediquoTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC82C8EF279FF20700151D42 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		BC82C8F327A02E1000151D42 /* ObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableObject.swift; sourceTree = "<group>"; };
 		BCCB00A2279AB98F00B1CB52 /* MediquoTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediquoTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCCB00A5279AB98F00B1CB52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCCB00AC279AB98F00B1CB52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -110,6 +114,24 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		BC82C8EE279FF1E100151D42 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				BC82C8EF279FF20700151D42 /* RealmManager.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		BC82C8F227A02DD100151D42 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				BCCB0150279EB88300B1CB52 /* Language */,
+				BCCB0130279E9B2100B1CB52 /* Utils.swift */,
+				BC82C8F327A02E1000151D42 /* ObservableObject.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		BCCB0099279AB98F00B1CB52 = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +153,8 @@
 		BCCB00A4279AB98F00B1CB52 /* MediquoTest */ = {
 			isa = PBXGroup;
 			children = (
+				BC82C8F227A02DD100151D42 /* Tools */,
+				BC82C8EE279FF1E100151D42 /* Database */,
 				BCCB012E279E9B2100B1CB52 /* Resources */,
 				BCCB00FF279AD38700B1CB52 /* Network */,
 				BCCB00DD279AC10600B1CB52 /* Features */,
@@ -266,9 +290,7 @@
 		BCCB012E279E9B2100B1CB52 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				BCCB0150279EB88300B1CB52 /* Language */,
 				BCCB012F279E9B2100B1CB52 /* Assets.xcassets */,
-				BCCB0130279E9B2100B1CB52 /* Utils.swift */,
 				BCCB0132279E9B2100B1CB52 /* Localization */,
 			);
 			path = Resources;
@@ -308,6 +330,7 @@
 				BCCB009F279AB98F00B1CB52 /* Frameworks */,
 				BCCB00A0279AB98F00B1CB52 /* Resources */,
 				BCCB0148279E9C6B00B1CB52 /* ShellScript */,
+				59BE531468C5182EACA0A89B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -374,6 +397,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		59BE531468C5182EACA0A89B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MediquoTest/Pods-MediquoTest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MediquoTest/Pods-MediquoTest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MediquoTest/Pods-MediquoTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		BCCB0148279E9C6B00B1CB52 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -422,12 +462,14 @@
 			files = (
 				BCCB0145279E9B2100B1CB52 /* Localization.swift in Sources */,
 				BCCB0105279AD64100B1CB52 /* RequestEncoding.swift in Sources */,
+				BC82C8F427A02E1000151D42 /* ObservableObject.swift in Sources */,
 				BCCB0154279EB8D100B1CB52 /* DispatchQueue-Extensions.swift in Sources */,
 				BCCB00FA279AC13800B1CB52 /* CharacterItemDataOut.swift in Sources */,
 				BCCB010F279ADFE400B1CB52 /* CharacterListViewController.swift in Sources */,
 				BCCB00A6279AB98F00B1CB52 /* AppDelegate.swift in Sources */,
 				BCCB0101279AD39B00B1CB52 /* EndpointRepositoryKeys.swift in Sources */,
 				BCCB00FC279AC13800B1CB52 /* CharacterListManager.swift in Sources */,
+				BC82C8F0279FF20700151D42 /* RealmManager.swift in Sources */,
 				BCCB012C279C3A1900B1CB52 /* CharacterDetailManager.swift in Sources */,
 				BCCB014F279EB40B00B1CB52 /* Locale-App.swift in Sources */,
 				BCCB00FE279AC13800B1CB52 /* CharacterListModel.swift in Sources */,

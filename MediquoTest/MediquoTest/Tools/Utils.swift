@@ -9,20 +9,18 @@ import UIKit
 
 class Utils {
     
-    static func getImage(from string: String) -> UIImage? {
+    static func getImageData(from string: String) -> Data? {
         guard let url = URL(string: string) else {
              return nil
         }
-
-        var image: UIImage?
         do {
             let data = try Data(contentsOf: url, options: [])
-            image = UIImage(data: data)
+            return data
         }
         catch {
             print(error.localizedDescription)
         }
-        return image
+        return nil
     }
     
     static func getAgeFromBirthDate(dateString: String) -> String {
