@@ -121,7 +121,7 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="LCb-9a-pmN" secondAttribute="trailing" id="2F4-Iv-1QO"/>
                         <constraint firstItem="LCb-9a-pmN" firstAttribute="height" secondItem="gAj-Bs-g0g" secondAttribute="height" priority="650" id="4nn-9i-67w"/>
@@ -135,7 +135,7 @@
                 </scrollView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="gAj-Bs-g0g" secondAttribute="trailing" id="9pD-HG-d81"/>
                 <constraint firstAttribute="bottom" secondItem="gAj-Bs-g0g" secondAttribute="bottom" id="mOU-lL-iku"/>

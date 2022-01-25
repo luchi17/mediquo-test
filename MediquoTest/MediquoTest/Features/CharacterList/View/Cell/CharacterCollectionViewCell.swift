@@ -29,15 +29,18 @@ class CharacterCollectionViewCell: UICollectionViewCell {
         
         imageView.contentMode = .scaleAspectFit
         
-        [titleLabel, nickNameLabel, errorLabel].forEach({
+        [titleLabel, nickNameLabel].forEach({
             $0?.numberOfLines = 0
             $0?.textAlignment = .center
+            $0?.textColor = .black
         })
         titleLabel.font = UIFont(name: "GillSans-Bold", size: 14)
         nickNameLabel.font = UIFont(name: "GillSans", size: 14)
         
         errorLabel.font = UIFont(name: "GillSans-Bold", size: 14)
         errorLabel.textColor = .red
+        errorLabel.numberOfLines = 0
+        errorLabel.textAlignment = .center
         errorLabel.text = Localization.CharacterList.errorMessage
     }
     

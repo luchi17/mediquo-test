@@ -49,9 +49,11 @@ class CharacterDetailManager: NSObject, CharacterDetailManagerProtocol {
     }
     
     private func setUpQuotes(quotesDataOut: [QuoteDataOut]) -> String {
+        
         var quotes: String = ""
+        
         for (index, quoteDataOut) in quotesDataOut.enumerated() {
-            quotes = quotes + Localization.CharacterDetail.quote + " \(index)" + ": " + quoteDataOut.quote + "\n\n"
+            quotes = quotes + " \(index)_ "  + quoteDataOut.quote + "\n\n"
         }
         return quotes
     }

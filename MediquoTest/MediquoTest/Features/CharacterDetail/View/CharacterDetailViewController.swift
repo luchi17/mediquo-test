@@ -54,7 +54,7 @@ class CharacterDetailViewController: UIViewController {
     
     func configureUI() {
         
-        contentView.backgroundColor = UIColor.systemTeal.withAlphaComponent(0.4)
+        contentView.backgroundColor = UIColor.systemTeal.withAlphaComponent(0.6)
         
         [nameLabel, nickLabel, ageLabel, seasonsLabel, quotesLabel].forEach({
             $0?.numberOfLines = 0
