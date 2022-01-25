@@ -62,9 +62,8 @@ class CharacterListViewController: UIViewController {
         
         self.contentView.backgroundColor = UIColor.systemTeal.withAlphaComponent(0.4)
         
-        changeLanguageButton.setTitle(Localization.Language.english, for: .normal)
         changeLanguageButton.setTitleColor(.systemTeal, for: .normal)
-        self.updateChangeLanguageTitle(Localization.Language.english)
+        self.updateChangeLanguageTitle(Localization.language)
         
         segmentedControl.tintColor = UIColor.systemTeal
         segmentedControl.addTarget(self, action: #selector(segmentedControlValueChanged), for: .valueChanged)
@@ -99,6 +98,15 @@ class CharacterListViewController: UIViewController {
         let characterCollectionViewCellIdentifier = String(describing: CharacterCollectionViewCell.self)
         let characterCollectionViewCellNib = UINib(nibName: characterCollectionViewCellIdentifier, bundle: nil)
         collectionView.register(characterCollectionViewCellNib, forCellWithReuseIdentifier: characterCollectionViewCellIdentifier)
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.superViewTouched))
+        tap.numberOfTapsRequired = 1
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
+    }
+    
+    @objc func superViewTouched() {
+        view.endEditing(true)
     }
     
     @objc private func segmentedControlValueChanged() {
@@ -149,11 +157,12 @@ class CharacterListViewController: UIViewController {
         
         if LocalStorage.language == AppLanguage.castellano {
             Locale.updateLanguage(AppLanguage.english)
-            self.updateChangeLanguageTitle(Localization.Language.spanish)
+            
         } else if LocalStorage.language == AppLanguage.english {
             Locale.updateLanguage(AppLanguage.castellano)
-            self.updateChangeLanguageTitle(Localization.Language.english)
+            
         }
+       self.updateChangeLanguageTitle(Localization.language)
     }
     
     @IBAction private func searchButtonTouchUpInside(_ sender: UIButton) {

@@ -15,6 +15,8 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name
 
  internal enum Localization {
+  /// Change to English
+  internal static var language: String { return Localization.tr("Localizable","language") }
   internal enum CharacterDetail {
     /// Edad
     internal static var age: String { return Localization.tr("Localizable","characterDetail.age") }
@@ -48,12 +50,6 @@ import Foundation
     internal static var retry: String { return Localization.tr("Localizable","characterList.retry") }
     /// Error del servidor
     internal static var serverError: String { return Localization.tr("Localizable","characterList.serverError") }
-  }
-  internal enum Language {
-    /// Change to english
-    internal static var english: String { return Localization.tr("Localizable","language.english") }
-    /// Cambiar a español
-    internal static var spanish: String { return Localization.tr("Localizable","language.spanish") }
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length

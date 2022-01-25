@@ -5,8 +5,7 @@
 //  Created by Mariluz Parejo on 24/01/21.
 //
 
-"language.spanish" = "Cambiar a español";
-"language.english" = "Change to english";
+"language" = "Cambiar a español";
 
 "characterList.breakingBad" = "Breaking Bad";
 "characterList.betterCallSaul" = "Better Call Saul";
