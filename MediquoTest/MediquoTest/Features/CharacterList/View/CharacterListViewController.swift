@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class CharacterListViewController: UIViewController {
     
@@ -41,20 +42,16 @@ class CharacterListViewController: UIViewController {
         self.startSpinner()
         viewModel.loadCharacterList()
         
-        viewModel.bindCharacterListModel = { list in
+        viewModel.characterListModel.observe = { list in
             
             self.stopSpinner()
-
-            guard let list = list else {
-                self.showErrorAlert()
-                return }
             
             self.characterListModel = list
             
             self.updateItemsToShow()
         }
         
-        viewModel.bindServiceError = { error in
+        viewModel.error.observe = { error in
         
             self.stopSpinner()
             self.showErrorAlert(message: error.localizedDescription)
@@ -113,10 +110,10 @@ class CharacterListViewController: UIViewController {
         DispatchQueue.main.async {
             
             if self.segmentedControl.selectedSegmentIndex == 0 {
-                self.currentItemsToShow = self.characterListModel.breakingBadCharacters ?? []
+                self.currentItemsToShow = self.characterListModel.breakingBadCharacters
                 
             } else {
-                self.currentItemsToShow = self.characterListModel.betterCallSaulCharacters ?? []
+                self.currentItemsToShow = self.characterListModel.betterCallSaulCharacters 
             }
             
             if let nameFilter = self.nameFilter, !nameFilter.isEmpty {

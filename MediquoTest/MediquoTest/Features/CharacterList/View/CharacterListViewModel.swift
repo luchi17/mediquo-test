@@ -10,28 +10,25 @@ import Foundation
 class CharacterListViewModel: NSObject {
     
     private var characterListManager: CharacterListManagerProtocol
-    private var characterListModel: CharacterListModel? {
-        didSet {
-            self.bindCharacterListModel(characterListModel)
-        }
-    }
     
-    var bindCharacterListModel : ((CharacterListModel?) -> ()) = { response in }
-    var bindServiceError : ((Error) -> ()) = { error in }
+    var characterListModel: ObservableObject<CharacterListModel> = ObservableObject()
+    var error: ObservableObject<Error> = ObservableObject()
     
     init(characterListManager: CharacterListManagerProtocol) {
         self.characterListManager = characterListManager
+        
     }
 }
 
 extension CharacterListViewModel: CharacterListInterfaceToViewModelProtocol {
-    
+   
     func loadCharacterList() {
-        characterListManager.getCharacterListData { characterListModel in
-            self.characterListModel = characterListModel
+        
+        characterListManager.getCharacterListData { response in
+            self.characterListModel.value = response
         } onError: { error in
             if let error = error {
-                self.bindServiceError(error)
+                self.error.value = error
             }
         }
     }
@@ -40,6 +37,6 @@ extension CharacterListViewModel: CharacterListInterfaceToViewModelProtocol {
 
 protocol CharacterListInterfaceToViewModelProtocol {
     func loadCharacterList()
-    var bindCharacterListModel: ((CharacterListModel?) -> ()) { get set }
-    var bindServiceError : ((Error) -> ()) { get set }
+    var error: ObservableObject<Error>{ get set }
+    var characterListModel: ObservableObject<CharacterListModel>{ get set }
 }
