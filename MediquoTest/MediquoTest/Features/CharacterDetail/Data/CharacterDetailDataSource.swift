@@ -14,7 +14,7 @@ class CharacterDetailDataSource : NSObject, CharacterDetailDataSourceProtocol {
     func getCharacterQuotesData(name: String, onSuccess: @escaping ([QuoteDataOut]?) -> (), onError: @escaping (Error?) -> ()) {
         
         let queryParams = ["author": name]
-        networkManager.doJSONRequest(endpointKey: EndpointRepositoryKeys.charactersList.rawValue,
+        networkManager.doJSONRequest(endpointKey: EndpointRepositoryKeys.charactersQuotes.rawValue,
                                      queryParams: queryParams,
                                      onSuccess: onSuccess,
                                      onError: onError)

@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		71B996FFF27D34AFEECA59D6 /* Pods_MediquoTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 046F5BF0823623C574471748 /* Pods_MediquoTest.framework */; };
 		BC82C8F0279FF20700151D42 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC82C8EF279FF20700151D42 /* RealmManager.swift */; };
 		BC82C8F427A02E1000151D42 /* ObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC82C8F327A02E1000151D42 /* ObservableObject.swift */; };
+		BC82C8F627A031ED00151D42 /* CharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC82C8F527A031ED00151D42 /* CharacterDetailViewModel.swift */; };
 		BCCB00A6279AB98F00B1CB52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB00A5279AB98F00B1CB52 /* AppDelegate.swift */; };
 		BCCB00AD279AB98F00B1CB52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCCB00AB279AB98F00B1CB52 /* Main.storyboard */; };
 		BCCB00F9279AC13800B1CB52 /* CharacterListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB00EB279AC13800B1CB52 /* CharacterListDataSource.swift */; };
@@ -41,12 +41,16 @@
 		BCCB014F279EB40B00B1CB52 /* Locale-App.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB014E279EB40B00B1CB52 /* Locale-App.swift */; };
 		BCCB0152279EB89F00B1CB52 /* Bundle-AppLocale.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB0151279EB89F00B1CB52 /* Bundle-AppLocale.swift */; };
 		BCCB0154279EB8D100B1CB52 /* DispatchQueue-Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB0153279EB8D100B1CB52 /* DispatchQueue-Extensions.swift */; };
+		F11E9E54B36BA23FF5929457 /* Pods_MediquoTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DEC3F95821C2929CE653871 /* Pods_MediquoTest.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		046F5BF0823623C574471748 /* Pods_MediquoTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MediquoTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		07C273345B35DDF20A74636B /* Pods-MediquoTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediquoTest.debug.xcconfig"; path = "Target Support Files/Pods-MediquoTest/Pods-MediquoTest.debug.xcconfig"; sourceTree = "<group>"; };
+		3DEC3F95821C2929CE653871 /* Pods_MediquoTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MediquoTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		816592F4E9D0D20BA07F4441 /* Pods-MediquoTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediquoTest.release.xcconfig"; path = "Target Support Files/Pods-MediquoTest/Pods-MediquoTest.release.xcconfig"; sourceTree = "<group>"; };
 		BC82C8EF279FF20700151D42 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		BC82C8F327A02E1000151D42 /* ObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableObject.swift; sourceTree = "<group>"; };
+		BC82C8F527A031ED00151D42 /* CharacterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewModel.swift; sourceTree = "<group>"; };
 		BCCB00A2279AB98F00B1CB52 /* MediquoTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediquoTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCCB00A5279AB98F00B1CB52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCCB00AC279AB98F00B1CB52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -81,8 +85,6 @@
 		BCCB014E279EB40B00B1CB52 /* Locale-App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Locale-App.swift"; sourceTree = "<group>"; };
 		BCCB0151279EB89F00B1CB52 /* Bundle-AppLocale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-AppLocale.swift"; sourceTree = "<group>"; };
 		BCCB0153279EB8D100B1CB52 /* DispatchQueue-Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue-Extensions.swift"; sourceTree = "<group>"; };
-		C8703BC0EBC0A1113DA52553 /* Pods-MediquoTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediquoTest.release.xcconfig"; path = "Target Support Files/Pods-MediquoTest/Pods-MediquoTest.release.xcconfig"; sourceTree = "<group>"; };
-		CF8429B6F5F176D77433F2A7 /* Pods-MediquoTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediquoTest.debug.xcconfig"; path = "Target Support Files/Pods-MediquoTest/Pods-MediquoTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,28 +92,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71B996FFF27D34AFEECA59D6 /* Pods_MediquoTest.framework in Frameworks */,
+				F11E9E54B36BA23FF5929457 /* Pods_MediquoTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		63FF355EA9BC6528A0F484EA /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				046F5BF0823623C574471748 /* Pods_MediquoTest.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		773CF8039BEAEF8CDAA2B1A7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CF8429B6F5F176D77433F2A7 /* Pods-MediquoTest.debug.xcconfig */,
-				C8703BC0EBC0A1113DA52553 /* Pods-MediquoTest.release.xcconfig */,
+				07C273345B35DDF20A74636B /* Pods-MediquoTest.debug.xcconfig */,
+				816592F4E9D0D20BA07F4441 /* Pods-MediquoTest.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		A16D6D16945EEFF9D9019522 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3DEC3F95821C2929CE653871 /* Pods_MediquoTest.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		BC82C8EE279FF1E100151D42 /* Database */ = {
@@ -138,7 +140,7 @@
 				BCCB00A4279AB98F00B1CB52 /* MediquoTest */,
 				BCCB00A3279AB98F00B1CB52 /* Products */,
 				773CF8039BEAEF8CDAA2B1A7 /* Pods */,
-				63FF355EA9BC6528A0F484EA /* Frameworks */,
+				A16D6D16945EEFF9D9019522 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -266,6 +268,7 @@
 			children = (
 				BCCB011A279B0E9700B1CB52 /* CharacterDetailViewController.swift */,
 				BCCB011B279B0E9700B1CB52 /* CharacterDetailViewController.xib */,
+				BC82C8F527A031ED00151D42 /* CharacterDetailViewModel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -325,12 +328,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BCCB00B9279AB99400B1CB52 /* Build configuration list for PBXNativeTarget "MediquoTest" */;
 			buildPhases = (
-				E83496B3DDBDBA69730077B2 /* [CP] Check Pods Manifest.lock */,
+				3CC266DB9E58A3B0266BB515 /* [CP] Check Pods Manifest.lock */,
 				BCCB009E279AB98F00B1CB52 /* Sources */,
 				BCCB009F279AB98F00B1CB52 /* Frameworks */,
 				BCCB00A0279AB98F00B1CB52 /* Resources */,
 				BCCB0148279E9C6B00B1CB52 /* ShellScript */,
-				59BE531468C5182EACA0A89B /* [CP] Embed Pods Frameworks */,
+				AA97DD4B2B840B3DCD5D7379 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -397,7 +400,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		59BE531468C5182EACA0A89B /* [CP] Embed Pods Frameworks */ = {
+		3CC266DB9E58A3B0266BB515 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MediquoTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA97DD4B2B840B3DCD5D7379 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -431,28 +456,6 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nswiftgen\n";
 		};
-		E83496B3DDBDBA69730077B2 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MediquoTest-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -471,6 +474,7 @@
 				BCCB00FC279AC13800B1CB52 /* CharacterListManager.swift in Sources */,
 				BC82C8F0279FF20700151D42 /* RealmManager.swift in Sources */,
 				BCCB012C279C3A1900B1CB52 /* CharacterDetailManager.swift in Sources */,
+				BC82C8F627A031ED00151D42 /* CharacterDetailViewModel.swift in Sources */,
 				BCCB014F279EB40B00B1CB52 /* Locale-App.swift in Sources */,
 				BCCB00FE279AC13800B1CB52 /* CharacterListModel.swift in Sources */,
 				BCCB010D279ADFE400B1CB52 /* CharacterListViewModel.swift in Sources */,
@@ -629,7 +633,7 @@
 		};
 		BCCB00BA279AB99400B1CB52 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CF8429B6F5F176D77433F2A7 /* Pods-MediquoTest.debug.xcconfig */;
+			baseConfigurationReference = 07C273345B35DDF20A74636B /* Pods-MediquoTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -658,7 +662,7 @@
 		};
 		BCCB00BB279AB99400B1CB52 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C8703BC0EBC0A1113DA52553 /* Pods-MediquoTest.release.xcconfig */;
+			baseConfigurationReference = 816592F4E9D0D20BA07F4441 /* Pods-MediquoTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

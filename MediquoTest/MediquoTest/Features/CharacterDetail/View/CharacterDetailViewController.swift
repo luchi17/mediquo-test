@@ -26,12 +26,25 @@ class CharacterDetailViewController: UIViewController {
     
     @IBOutlet private weak var stackView: UIStackView!
     
+    private var viewModel: CharacterDetailInterfaceToViewModelProtocol = CharacterDetailViewModel(characterDetailManager: CharacterDetailManager( dataSource: CharacterDetailDataSource()))
+    
     var model: CharacterItemModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.configureUI()
-        self.setModel()
+        
+        self.setEmptyModel()
+        
+        guard let model = model else { return }
+        
+        viewModel.loadCharacterQuotes(characterItem: model)
+        
+        viewModel.quotes.observe = { quotes in
+            
+            self.setModel()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -95,5 +108,12 @@ class CharacterDetailViewController: UIViewController {
         ageValueLabel.text = model?.age
         seasonsValueLabel.text = model?.seasons
         quotesValueLabel.text = model?.quotes
+    }
+    
+    private func setEmptyModel() {
+        [nameLabel, nickLabel, ageLabel, seasonsLabel, quotesLabel, nameValueLabel, nickValueLabel, ageValueLabel, seasonsValueLabel, quotesValueLabel].forEach({
+            $0?.text = ""
+        })
+        imageView.image = nil
     }
 }

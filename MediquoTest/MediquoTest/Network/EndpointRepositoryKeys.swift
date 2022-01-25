@@ -9,4 +9,5 @@ import Foundation
 
 enum EndpointRepositoryKeys: String {
     case charactersList = "/api/characters"
+    case charactersQuotes = "/api/quote"
 }
