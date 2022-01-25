@@ -7,8 +7,7 @@
 
 import Foundation
 
-
 struct CharacterListModel {
-    var breakingBadCharacters: [CharacterItemModel]?
-    var betterCallSaulCharacters: [CharacterItemModel]?
+    var breakingBadCharacters: [CharacterItemModel] = []
+    var betterCallSaulCharacters: [CharacterItemModel] = []
 }

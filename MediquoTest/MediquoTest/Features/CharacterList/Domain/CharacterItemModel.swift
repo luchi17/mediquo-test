@@ -6,31 +6,40 @@
 //
 
 import Foundation
-import UIKit
+import RealmSwift
 
-class CharacterItemModel: Equatable {
+class CharacterItemModel: Object {
     
-    var id: Int
-    var name: String
-    var image: UIImage?
-    var age: String?
-    var nickname: String
-    var series: String
-    var seasons: String
-    var quotes: String?
+    @objc dynamic var id: Int = 0
+    @objc dynamic var compoundKey = ""
+    @objc dynamic var name: String = ""
+    @objc dynamic var age: String?
+    @objc dynamic var nickname: String = ""
+    @objc dynamic var series: String = ""
+    @objc dynamic var seasons: String = ""
+    @objc dynamic var quotes: String? = ""
+    @objc dynamic var imageData: Data? = Data()
     
-    init(id: Int, name: String, image: UIImage? = nil, age: String? = nil, nickname: String, series: String, seasons: String, quotes: String? = nil) {
-        self.id = id
-        self.name = name
-        self.image = image
-        self.age = age
-        self.nickname = nickname
-        self.series = series
-        self.seasons = seasons
-        self.quotes = quotes
+    var image: UIImage? {
+        if let imageData = imageData {
+            return UIImage(data: imageData)
+        } else {
+            return nil
+        }
     }
     
-    static func == (lhs: CharacterItemModel, rhs: CharacterItemModel) -> Bool {
-        return lhs.id == rhs.id
+    override class func primaryKey() -> String? {
+        return "compoundKey"
+    }
+    
+    func setUpPrimaryKey(id: Int, series: String) {
+        self.id = id
+        self.series = series
+        self.compoundKey = compoundKeyValue()
+    }
+    
+    func compoundKeyValue() -> String {
+        return "\(id)\(series)"
     }
 }
+
