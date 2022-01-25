@@ -16,26 +16,8 @@ class RealmManager: RealmOperations {
     
     static var shared = RealmManager()
     
-    private func configureRealm() {
-        do {
-            realm = try Realm(configuration: realmConfig())
-        } catch {
-            print(error)
-            fatalError("Unable to create an instance of Realm")
-        }
-    }
-    
     init() {
-        self.configureRealm()
-    }
-    
-    func realmConfig() -> Realm.Configuration {
-        return Realm.Configuration(schemaVersion: self.schemaVersion, migrationBlock: { (migration, oldSchemaVersion) in
-            if oldSchemaVersion < 2 {
-                var config = self.realmConfig()
-                config.deleteRealmIfMigrationNeeded = true
-            }
-        })
+        realm = try! Realm()
     }
     
     func add<T: Object>(_ object: T) {
