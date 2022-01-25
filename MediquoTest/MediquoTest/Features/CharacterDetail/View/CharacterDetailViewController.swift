@@ -91,23 +91,27 @@ class CharacterDetailViewController: UIViewController {
     
     private func setModel() {
         
+        guard let model = model else {
+            return
+        }
+
         nameLabel.text = Localization.CharacterDetail.name.uppercased()
         nickLabel.text = Localization.CharacterDetail.nick.uppercased()
         ageLabel.text = Localization.CharacterDetail.age.uppercased()
         seasonsLabel.text = Localization.CharacterDetail.seasons.uppercased()
         quotesLabel.text = Localization.CharacterDetail.quotes.uppercased()
         
-        nameLabel.isHidden = model?.name == nil
-        nickLabel.isHidden = model?.nickname == nil
-        seasonsLabel.isHidden = model?.seasons == nil
-        quotesLabel.isHidden = model?.quotes == nil
+        nameLabel.isHidden = model.name.isEmpty
+        nickLabel.isHidden = model.nickname.isEmpty
+        seasonsLabel.isHidden = model.seasons.isEmpty
+        quotesLabel.isHidden = model.quotes?.isEmpty ?? true
         
-        imageView.image = model?.image
-        nameValueLabel.text = model?.name
-        nickValueLabel.text = model?.nickname
-        ageValueLabel.text = model?.age
-        seasonsValueLabel.text = model?.seasons
-        quotesValueLabel.text = model?.quotes
+        imageView.image = model.image
+        nameValueLabel.text = model.name
+        nickValueLabel.text = model.nickname
+        ageValueLabel.text = model.age
+        seasonsValueLabel.text = model.seasons
+        quotesValueLabel.text = model.quotes
     }
     
     private func setEmptyModel() {
