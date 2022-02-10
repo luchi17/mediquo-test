@@ -42,7 +42,9 @@ class CharacterListViewController: UIViewController {
         self.startSpinner()
         viewModel.loadCharacterList()
         
-        viewModel.characterListModel.observe = { list in
+        viewModel.characterListModel.observe = { [weak self] list in
+            
+            guard let self = self else { return }
             
             self.stopSpinner()
             
@@ -51,8 +53,9 @@ class CharacterListViewController: UIViewController {
             self.updateItemsToShow()
         }
         
-        viewModel.error.observe = { error in
-        
+        viewModel.error.observe = { [weak self] error in
+            
+            guard let self = self else { return }
             self.stopSpinner()
             self.showErrorAlert(message: error.localizedDescription)
         }

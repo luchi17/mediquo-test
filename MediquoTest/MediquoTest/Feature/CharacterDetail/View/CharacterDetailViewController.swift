@@ -41,8 +41,8 @@ class CharacterDetailViewController: UIViewController {
         
         viewModel.loadCharacterQuotes(characterItem: model)
         
-        viewModel.quotes.observe = { quotes in
-            
+        viewModel.quotes.observe = { [weak self] quotes in
+            guard let self = self else { return }
             self.setModel()
         }
     }

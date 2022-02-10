@@ -15,8 +15,9 @@ class ObservableObject<T> {
     var value: T? {
         didSet {
             if let property = self.value {
-                queue.async {
-                    self.observe?(property)
+                queue.async { [weak self] in
+                    guard let strongSelf = self else { return }
+                    strongSelf.observe?(property)
                 }
             }
         }
