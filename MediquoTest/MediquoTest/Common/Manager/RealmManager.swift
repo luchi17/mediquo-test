@@ -10,8 +10,6 @@ import RealmSwift
 
 class RealmManager: RealmOperations {
     
-    private let schemaVersion: UInt64 = 4
-    
     static var shared = RealmManager()
     
     init() {
