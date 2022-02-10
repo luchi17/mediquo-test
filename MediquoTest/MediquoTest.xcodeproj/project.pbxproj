@@ -10,6 +10,7 @@
 		BC82C8F0279FF20700151D42 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC82C8EF279FF20700151D42 /* RealmManager.swift */; };
 		BC82C8F427A02E1000151D42 /* ObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC82C8F327A02E1000151D42 /* ObservableObject.swift */; };
 		BC82C8F627A031ED00151D42 /* CharacterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC82C8F527A031ED00151D42 /* CharacterDetailViewModel.swift */; };
+		BCB8860727B59D19007F0D80 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCB8860627B59D19007F0D80 /* SplashScreen.storyboard */; };
 		BCCB00A6279AB98F00B1CB52 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB00A5279AB98F00B1CB52 /* AppDelegate.swift */; };
 		BCCB00AD279AB98F00B1CB52 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCCB00AB279AB98F00B1CB52 /* Main.storyboard */; };
 		BCCB00F9279AC13800B1CB52 /* CharacterListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB00EB279AC13800B1CB52 /* CharacterListDataSource.swift */; };
@@ -19,13 +20,11 @@
 		BCCB00FE279AC13800B1CB52 /* CharacterListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB00F1279AC13800B1CB52 /* CharacterListModel.swift */; };
 		BCCB0101279AD39B00B1CB52 /* EndpointRepositoryKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB0100279AD39B00B1CB52 /* EndpointRepositoryKeys.swift */; };
 		BCCB0103279AD53200B1CB52 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB0102279AD53200B1CB52 /* NetworkManager.swift */; };
-		BCCB0105279AD64100B1CB52 /* RequestEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB0104279AD64100B1CB52 /* RequestEncoding.swift */; };
 		BCCB010D279ADFE400B1CB52 /* CharacterListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB0107279ADFE400B1CB52 /* CharacterListViewModel.swift */; };
 		BCCB010E279ADFE400B1CB52 /* CharacterListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCCB0108279ADFE400B1CB52 /* CharacterListViewController.xib */; };
 		BCCB010F279ADFE400B1CB52 /* CharacterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB0109279ADFE400B1CB52 /* CharacterListViewController.swift */; };
 		BCCB0110279ADFE400B1CB52 /* CharacterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB010B279ADFE400B1CB52 /* CharacterCollectionViewCell.swift */; };
 		BCCB0111279ADFE400B1CB52 /* CharacterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCCB010C279ADFE400B1CB52 /* CharacterCollectionViewCell.xib */; };
-		BCCB0115279AE3EA00B1CB52 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCCB0114279AE3EA00B1CB52 /* SplashScreen.storyboard */; };
 		BCCB011C279B0E9700B1CB52 /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB011A279B0E9700B1CB52 /* CharacterDetailViewController.swift */; };
 		BCCB011D279B0E9700B1CB52 /* CharacterDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCCB011B279B0E9700B1CB52 /* CharacterDetailViewController.xib */; };
 		BCCB0128279C3A1900B1CB52 /* CharacterDetailDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCB0121279C3A1900B1CB52 /* CharacterDetailDataSource.swift */; };
@@ -51,6 +50,7 @@
 		BC82C8EF279FF20700151D42 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		BC82C8F327A02E1000151D42 /* ObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableObject.swift; sourceTree = "<group>"; };
 		BC82C8F527A031ED00151D42 /* CharacterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewModel.swift; sourceTree = "<group>"; };
+		BCB8860627B59D19007F0D80 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
 		BCCB00A2279AB98F00B1CB52 /* MediquoTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediquoTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCCB00A5279AB98F00B1CB52 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCCB00AC279AB98F00B1CB52 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -62,13 +62,11 @@
 		BCCB00F1279AC13800B1CB52 /* CharacterListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterListModel.swift; sourceTree = "<group>"; };
 		BCCB0100279AD39B00B1CB52 /* EndpointRepositoryKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointRepositoryKeys.swift; sourceTree = "<group>"; };
 		BCCB0102279AD53200B1CB52 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		BCCB0104279AD64100B1CB52 /* RequestEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestEncoding.swift; sourceTree = "<group>"; };
 		BCCB0107279ADFE400B1CB52 /* CharacterListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterListViewModel.swift; sourceTree = "<group>"; };
 		BCCB0108279ADFE400B1CB52 /* CharacterListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CharacterListViewController.xib; sourceTree = "<group>"; };
 		BCCB0109279ADFE400B1CB52 /* CharacterListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterListViewController.swift; sourceTree = "<group>"; };
 		BCCB010B279ADFE400B1CB52 /* CharacterCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterCollectionViewCell.swift; sourceTree = "<group>"; };
 		BCCB010C279ADFE400B1CB52 /* CharacterCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CharacterCollectionViewCell.xib; sourceTree = "<group>"; };
-		BCCB0114279AE3EA00B1CB52 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
 		BCCB011A279B0E9700B1CB52 /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
 		BCCB011B279B0E9700B1CB52 /* CharacterDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CharacterDetailViewController.xib; sourceTree = "<group>"; };
 		BCCB0121279C3A1900B1CB52 /* CharacterDetailDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterDetailDataSource.swift; sourceTree = "<group>"; };
@@ -116,22 +114,77 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		BC82C8EE279FF1E100151D42 /* Database */ = {
+		BCB885FA27B5983D007F0D80 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				BC82C8EF279FF20700151D42 /* RealmManager.swift */,
+				BCB8860127B599AE007F0D80 /* Manager */,
+				BCB8860027B59989007F0D80 /* Model */,
+				BCB885FE27B598FA007F0D80 /* Utils */,
 			);
-			path = Database;
+			path = Common;
 			sourceTree = "<group>";
 		};
-		BC82C8F227A02DD100151D42 /* Tools */ = {
+		BCB885FE27B598FA007F0D80 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				BCCB0150279EB88300B1CB52 /* Language */,
+				BCB8860227B59AD6007F0D80 /* Language */,
 				BCCB0130279E9B2100B1CB52 /* Utils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		BCB885FF27B59945007F0D80 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				BCCB012F279E9B2100B1CB52 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		BCB8860027B59989007F0D80 /* Model */ = {
+			isa = PBXGroup;
+			children = (
 				BC82C8F327A02E1000151D42 /* ObservableObject.swift */,
 			);
-			path = Tools;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BCB8860127B599AE007F0D80 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				BCCB00FF279AD38700B1CB52 /* Network */,
+				BC82C8EF279FF20700151D42 /* RealmManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		BCB8860227B59AD6007F0D80 /* Language */ = {
+			isa = PBXGroup;
+			children = (
+				BCCB014E279EB40B00B1CB52 /* Locale-App.swift */,
+				BCCB014A279E9E6000B1CB52 /* LocalStorage.swift */,
+				BCCB014C279E9E8500B1CB52 /* AppLanguage.swift */,
+				BCCB0151279EB89F00B1CB52 /* Bundle-AppLocale.swift */,
+				BCCB0153279EB8D100B1CB52 /* DispatchQueue-Extensions.swift */,
+			);
+			path = Language;
+			sourceTree = "<group>";
+		};
+		BCB8860427B59D19007F0D80 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				BCB8860527B59D19007F0D80 /* View */,
+			);
+			name = Splash;
+			path = MediquoTest/Feature/Splash;
+			sourceTree = SOURCE_ROOT;
+		};
+		BCB8860527B59D19007F0D80 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BCB8860627B59D19007F0D80 /* SplashScreen.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		BCCB0099279AB98F00B1CB52 = {
@@ -155,31 +208,26 @@
 		BCCB00A4279AB98F00B1CB52 /* MediquoTest */ = {
 			isa = PBXGroup;
 			children = (
-				BC82C8F227A02DD100151D42 /* Tools */,
-				BC82C8EE279FF1E100151D42 /* Database */,
 				BCCB012E279E9B2100B1CB52 /* Resources */,
-				BCCB00FF279AD38700B1CB52 /* Network */,
-				BCCB00DD279AC10600B1CB52 /* Features */,
-				BCCB00A5279AB98F00B1CB52 /* AppDelegate.swift */,
-				BCCB00AB279AB98F00B1CB52 /* Main.storyboard */,
-				BCCB00B6279AB99400B1CB52 /* Info.plist */,
+				BCB885FA27B5983D007F0D80 /* Common */,
+				BCCB00DD279AC10600B1CB52 /* Feature */,
 			);
 			path = MediquoTest;
 			sourceTree = "<group>";
 		};
-		BCCB00DD279AC10600B1CB52 /* Features */ = {
+		BCCB00DD279AC10600B1CB52 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				BCB8860427B59D19007F0D80 /* Splash */,
 				BCCB0118279B0E9700B1CB52 /* CharacterDetail */,
 				BCCB00E2279AC13800B1CB52 /* CharacterList */,
 			);
-			path = Features;
+			path = Feature;
 			sourceTree = "<group>";
 		};
 		BCCB00E2279AC13800B1CB52 /* CharacterList */ = {
 			isa = PBXGroup;
 			children = (
-				BCCB0112279AE3EA00B1CB52 /* Splash */,
 				BCCB0106279ADFE400B1CB52 /* View */,
 				BCCB00EA279AC13800B1CB52 /* Data */,
 				BCCB00EE279AC13800B1CB52 /* Domain */,
@@ -209,9 +257,8 @@
 		BCCB00FF279AD38700B1CB52 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				BCCB0100279AD39B00B1CB52 /* EndpointRepositoryKeys.swift */,
 				BCCB0102279AD53200B1CB52 /* NetworkManager.swift */,
-				BCCB0104279AD64100B1CB52 /* RequestEncoding.swift */,
+				BCCB0100279AD39B00B1CB52 /* EndpointRepositoryKeys.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -234,23 +281,6 @@
 				BCCB010C279ADFE400B1CB52 /* CharacterCollectionViewCell.xib */,
 			);
 			path = Cell;
-			sourceTree = "<group>";
-		};
-		BCCB0112279AE3EA00B1CB52 /* Splash */ = {
-			isa = PBXGroup;
-			children = (
-				BCCB0113279AE3EA00B1CB52 /* View */,
-			);
-			name = Splash;
-			path = MediquoTest/Features/Splash;
-			sourceTree = SOURCE_ROOT;
-		};
-		BCCB0113279AE3EA00B1CB52 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				BCCB0114279AE3EA00B1CB52 /* SplashScreen.storyboard */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		BCCB0118279B0E9700B1CB52 /* CharacterDetail */ = {
@@ -293,7 +323,10 @@
 		BCCB012E279E9B2100B1CB52 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				BCCB012F279E9B2100B1CB52 /* Assets.xcassets */,
+				BCCB00A5279AB98F00B1CB52 /* AppDelegate.swift */,
+				BCCB00AB279AB98F00B1CB52 /* Main.storyboard */,
+				BCCB00B6279AB99400B1CB52 /* Info.plist */,
+				BCB885FF27B59945007F0D80 /* Assets */,
 				BCCB0132279E9B2100B1CB52 /* Localization */,
 			);
 			path = Resources;
@@ -309,18 +342,6 @@
 			path = Localization;
 			sourceTree = "<group>";
 		};
-		BCCB0150279EB88300B1CB52 /* Language */ = {
-			isa = PBXGroup;
-			children = (
-				BCCB014E279EB40B00B1CB52 /* Locale-App.swift */,
-				BCCB014A279E9E6000B1CB52 /* LocalStorage.swift */,
-				BCCB014C279E9E8500B1CB52 /* AppLanguage.swift */,
-				BCCB0151279EB89F00B1CB52 /* Bundle-AppLocale.swift */,
-				BCCB0153279EB8D100B1CB52 /* DispatchQueue-Extensions.swift */,
-			);
-			path = Language;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -332,7 +353,8 @@
 				BCCB009E279AB98F00B1CB52 /* Sources */,
 				BCCB009F279AB98F00B1CB52 /* Frameworks */,
 				BCCB00A0279AB98F00B1CB52 /* Resources */,
-				BCCB0148279E9C6B00B1CB52 /* ShellScript */,
+				BCB8860327B59B1E007F0D80 /* ShellScript */,
+				BCCB0148279E9C6B00B1CB52 /* Run Script */,
 				AA97DD4B2B840B3DCD5D7379 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -386,8 +408,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BCCB0115279AE3EA00B1CB52 /* SplashScreen.storyboard in Resources */,
 				BCCB0111279ADFE400B1CB52 /* CharacterCollectionViewCell.xib in Resources */,
+				BCB8860727B59D19007F0D80 /* SplashScreen.storyboard in Resources */,
 				BCCB0147279E9B2100B1CB52 /* structured-swift4.stencil in Resources */,
 				BCCB011D279B0E9700B1CB52 /* CharacterDetailViewController.xib in Resources */,
 				BCCB010E279ADFE400B1CB52 /* CharacterListViewController.xib in Resources */,
@@ -439,9 +461,10 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MediquoTest/Pods-MediquoTest-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BCCB0148279E9C6B00B1CB52 /* ShellScript */ = {
+		BCB8860327B59B1E007F0D80 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			alwaysOutOfDate = 1;
+			buildActionMask = 8;
 			files = (
 			);
 			inputFileListPaths = (
@@ -452,9 +475,27 @@
 			);
 			outputPaths = (
 			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\npod install\n";
+		};
+		BCCB0148279E9C6B00B1CB52 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nswiftgen\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\nswiftgen\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -464,7 +505,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCCB0145279E9B2100B1CB52 /* Localization.swift in Sources */,
-				BCCB0105279AD64100B1CB52 /* RequestEncoding.swift in Sources */,
 				BC82C8F427A02E1000151D42 /* ObservableObject.swift in Sources */,
 				BCCB0154279EB8D100B1CB52 /* DispatchQueue-Extensions.swift in Sources */,
 				BCCB00FA279AC13800B1CB52 /* CharacterItemDataOut.swift in Sources */,
@@ -641,7 +681,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4QM99W37M3;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MediquoTest/Info.plist;
+				INFOPLIST_FILE = MediquoTest/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = SplashScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
@@ -670,7 +710,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4QM99W37M3;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MediquoTest/Info.plist;
+				INFOPLIST_FILE = MediquoTest/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = SplashScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
