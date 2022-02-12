@@ -6,7 +6,7 @@ The public API https://breakingbadapi.com is called to get the characters and so
 ## Installation
 
 The installation is done using the dependency manager Cocoapods.
-Go in the shell to the project path /mediquo-test/MediquoTest and then run: 
+Go in the shell to the directory path /MediquoTest where the Podfile is and then run: 
 
 ```bash
 pod install
