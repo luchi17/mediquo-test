@@ -12,6 +12,8 @@ Go in the shell to the directory path /MediquoTest where the Podfile is and then
 pod install
 ```
 
+Afterwards, you can open the MediquoTest.xcworkspace and run the app
+
 ## Usage
 
 Just run the app. The app lets you: 
