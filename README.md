@@ -32,11 +32,11 @@ Just run the app. The app lets you:
 
 ### Character detail
 
-- In Spanish 
+- In English 
 
 [![Simulator-Screen-Shot-i-Phone-12-Pro-2022-02-12-at-13-26-17.png](https://i.postimg.cc/XYZHqySR/Simulator-Screen-Shot-i-Phone-12-Pro-2022-02-12-at-13-26-17.png)](https://postimg.cc/FY4gnzKp)
 
-- In English
+- In Spanish
 
 [![Simulator-Screen-Shot-i-Phone-12-Pro-2022-02-12-at-13-26-07.png](https://i.postimg.cc/NfCCQkV8/Simulator-Screen-Shot-i-Phone-12-Pro-2022-02-12-at-13-26-07.png)](https://postimg.cc/ZC3xcpJ0)
 
