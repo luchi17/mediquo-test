@@ -15,7 +15,7 @@ Then, open the MediquoTest.xcworkspace and run the app
 
 ## Usage
 
-Just run the app. The app lets you: 
+The app lets you: 
 
 - Change the language of the information displayed from Spanish to English and viceversa.
 - Filter the characters by their name or nickname.
