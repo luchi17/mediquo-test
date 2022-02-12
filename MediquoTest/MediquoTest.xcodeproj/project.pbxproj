@@ -353,7 +353,6 @@
 				BCCB009E279AB98F00B1CB52 /* Sources */,
 				BCCB009F279AB98F00B1CB52 /* Frameworks */,
 				BCCB00A0279AB98F00B1CB52 /* Resources */,
-				BCB8860327B59B1E007F0D80 /* ShellScript */,
 				BCCB0148279E9C6B00B1CB52 /* Run Script */,
 				AA97DD4B2B840B3DCD5D7379 /* [CP] Embed Pods Frameworks */,
 			);
@@ -460,24 +459,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MediquoTest/Pods-MediquoTest-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
-		};
-		BCB8860327B59B1E007F0D80 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 8;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\npod install\n";
 		};
 		BCCB0148279E9C6B00B1CB52 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
