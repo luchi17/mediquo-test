@@ -11,6 +11,7 @@ Go in the shell to the directory path /MediquoTest where the Podfile is and then
 ```bash
 pod install
 ```
+Then, open the MediquoTest.xcworkspace and run the app
 
 ## Usage
 
